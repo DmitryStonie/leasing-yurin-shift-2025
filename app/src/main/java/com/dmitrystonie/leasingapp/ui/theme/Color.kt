@@ -41,3 +41,5 @@ val BgBrandExtraLight = Color(0xFFFF9696)
 val TextBrandDisabled = Color(0xFFFF9BA6)
 val IndicatorFocused = Color(0xFFDB0019)
 val IndicatorFocusedAlternative = Color(0xFFDB0019)
+
+val IconPrimary = Color(0xFF9E9E9E)
