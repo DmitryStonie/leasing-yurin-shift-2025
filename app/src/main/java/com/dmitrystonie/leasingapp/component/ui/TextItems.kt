@@ -1,4 +1,4 @@
-package com.dmitrystonie.leasingapp.carlooking.ui
+package com.dmitrystonie.leasingapp.component.ui
 
 import androidx.compose.foundation.clickable
 import androidx.compose.material3.Text
@@ -6,6 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
 import com.dmitrystonie.leasingapp.ui.theme.TextPrimary
 import com.dmitrystonie.leasingapp.ui.theme.TextQuartenery
@@ -37,6 +38,7 @@ val textItemWithActionStyle = TextStyle(
     fontFamily = appFontFamily,
     letterSpacing = 0.sp,
     lineHeight = 24.sp,
+    textAlign = TextAlign.Center
 )
 
 private val smallTitleTextStyle = TextStyle(
@@ -86,6 +88,7 @@ fun TextAction(modifier: Modifier = Modifier, text: String, onClick: () -> Unit)
         text = text,
         modifier = modifier.clickable(true) { onClick() },
         style = textItemWithActionStyle,
+
     )
 }
 
@@ -98,6 +101,7 @@ fun SmallTitle(modifier: Modifier = Modifier, text: String) {
         style = smallTitleTextStyle
     )
 }
+
 
 @Composable
 fun SmallTitleThin(modifier: Modifier = Modifier, text: String) {

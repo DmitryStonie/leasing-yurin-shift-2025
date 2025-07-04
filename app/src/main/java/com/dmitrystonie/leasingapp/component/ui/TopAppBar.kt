@@ -1,20 +1,22 @@
-package com.dmitrystonie.leasingapp.carlooking.ui
+package com.dmitrystonie.leasingapp.component.ui
 
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.dmitrystonie.leasingapp.ui.theme.BgPrimary
+import com.dmitrystonie.leasingapp.ui.theme.IndicatorLight
 import com.dmitrystonie.leasingapp.ui.theme.TextPrimary
 import com.dmitrystonie.leasingapp.ui.theme.appFontFamily
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -23,7 +25,13 @@ fun CarsTopAppBar(text: String, modifier: Modifier = Modifier) {
         title = {
             CarsTopAppBarTitle(text)
         },
-        modifier = modifier.padding(horizontal = 16.dp, vertical = 12.dp)
+        colors = TopAppBarColors(
+            containerColor = BgPrimary,
+            scrolledContainerColor = BgPrimary,
+            navigationIconContentColor = IndicatorLight,
+            titleContentColor = IndicatorLight,
+            actionIconContentColor = IndicatorLight
+        )
     )
 }
 
@@ -36,8 +44,7 @@ fun CarsTopAppBarWithoutIcons(
     TopAppBar(
         title = {
             CarsTopAppBarTitle(text)
-        },
-        modifier = modifier.padding(horizontal = 16.dp, vertical = 12.dp)
+        }
     )
 }
 
@@ -54,17 +61,21 @@ fun CarsTopAppBarWithRightIcon(
     TopAppBar(
         title = {
             CarsTopAppBarTitle(text)
-        },
-        actions = {
+        }, actions = {
             IconButton({ }) {
                 Icon(
-                    painter = icon,
-                    contentDescription = description,
-                    tint = iconColor
+                    painter = icon, contentDescription = description, tint = iconColor
                 )
             }
         },
-        modifier = modifier.padding(horizontal = 16.dp, vertical = 12.dp)
+        modifier = modifier,
+        colors = TopAppBarColors(
+            containerColor = BgPrimary,
+            scrolledContainerColor = BgPrimary,
+            navigationIconContentColor = IndicatorLight,
+            titleContentColor = TextPrimary,
+            actionIconContentColor = IndicatorLight
+        )
     )
 }
 
@@ -76,21 +87,26 @@ fun CarsTopAppBarWithLeftIcon(
     icon: Painter,
     iconColor: Color,
     description: String,
+    onClick: () -> Unit
 ) {
     TopAppBar(
         title = {
             CarsTopAppBarTitle(text)
-        },
-        navigationIcon = {
-            IconButton({ }) {
+        }, navigationIcon = {
+            IconButton(onClick = onClick) {
                 Icon(
-                    painter = icon,
-                    contentDescription = description,
-                    tint = iconColor
+                    painter = icon, contentDescription = description, tint = iconColor
                 )
             }
         },
-        modifier = modifier.padding(horizontal = 16.dp, vertical = 12.dp)
+        modifier = modifier,
+        colors = TopAppBarColors(
+            containerColor = BgPrimary,
+            scrolledContainerColor = BgPrimary,
+            navigationIconContentColor = IndicatorLight,
+            titleContentColor = TextPrimary,
+            actionIconContentColor = IndicatorLight
+        )
     )
 }
 

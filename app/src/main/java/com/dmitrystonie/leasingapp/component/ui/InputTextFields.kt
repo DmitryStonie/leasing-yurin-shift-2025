@@ -1,6 +1,7 @@
-package com.dmitrystonie.leasingapp.carlooking.ui
+package com.dmitrystonie.leasingapp.component.ui
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
@@ -47,7 +48,7 @@ fun InputTextField(
     text: String,
     onValueChange: (String) -> Unit,
     placeholderText: String,
-    trailingIcon: @Composable (() -> Unit)?,
+    trailingIcon: @Composable (() -> Unit)? = null,
     minLines: Int = 1,
     maxLines: Int = 1
 ) {
@@ -96,12 +97,12 @@ fun InputTextFieldWithTitle(
     fieldText: String,
     placeholderText: String,
     onValueChange: (String) -> Unit,
-    trailingIcon: @Composable (() -> Unit)?
+    trailingIcon: @Composable (() -> Unit)? = null
 ) {
-    Column {
-        BigTitle(modifier = Modifier.padding(bottom = 6.dp), text = titleText)
+    Column(modifier = modifier) {
+        SmallTitleThin(modifier = Modifier.padding(bottom = 6.dp), text = titleText)
         InputTextField(
-            modifier = modifier,
+            modifier = Modifier.fillMaxWidth(),
             text = fieldText,
             onValueChange = onValueChange,
             placeholderText = placeholderText,

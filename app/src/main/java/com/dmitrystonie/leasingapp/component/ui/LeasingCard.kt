@@ -1,4 +1,4 @@
-package com.dmitrystonie.leasingapp.carlooking.ui
+package com.dmitrystonie.leasingapp.component.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border

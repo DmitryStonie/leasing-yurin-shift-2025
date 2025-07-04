@@ -1,4 +1,4 @@
-package com.dmitrystonie.leasingapp.carlooking.ui
+package com.dmitrystonie.leasingapp.component.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
@@ -49,11 +48,16 @@ val subtitleItemStyle = TextStyle(
 )
 
 data class SmallCarCardDto(
-    val name: String, val specs: String, val priceDay: String, val pricePeriod: String
+    val name: String,
+    val specs: String,
+    val priceDay: String,
+    val pricePeriod: String,
+    val image: Painter
 )
 
 @Composable
 fun CarSmallCard(
+    modifier: Modifier = Modifier,
     imagePainter: Painter,
     imageDescription: String,
     smallCarCardDto: SmallCarCardDto,
@@ -62,18 +66,27 @@ fun CarSmallCard(
     Row(
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically,
-        modifier = Modifier
+        modifier = modifier
             .padding(horizontal = 24.dp)
             .fillMaxWidth()
             .clickable(true, onClick = onClick)
     ) {
         Image(
-            imagePainter, imageDescription, modifier = Modifier.border(
-                width = 0.dp, color = Transparent, shape = RoundedCornerShape(8.dp)
-            ).height(116.dp).width(152.dp),
+            imagePainter, imageDescription,
+            modifier = Modifier
+                .border(
+                    width = 0.dp, color = Transparent, shape = RoundedCornerShape(8.dp)
+                )
+                .height(116.dp)
+                .width(152.dp),
             contentScale = ContentScale.Fit,
         )
-        Column(verticalArrangement = Arrangement.SpaceBetween, modifier = Modifier.fillMaxWidth().padding(start = 16.dp)) {
+        Column(
+            verticalArrangement = Arrangement.SpaceBetween,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(start = 16.dp)
+        ) {
             Column {
                 Text(
                     text = smallCarCardDto.name, style = titleItemStyle
@@ -105,11 +118,12 @@ fun CarSmallCardPreview() {
         name = "Chery Arrizo 8",
         specs = "Автомат, 2.5л",
         priceDay = "5 000 ₽",
-        pricePeriod = "70 000 ₽ за 14 дней"
+        pricePeriod = "70 000 ₽ за 14 дней",
+        image = painterResource(R.drawable.car_sample)
     )
     CarSmallCard(
-        imagePainter = painterResource(R.drawable.car_sample),
-        imageDescription = "Car",
+        imagePainter = smallCarCardDto.image,
+        imageDescription = smallCarCardDto.name,
         smallCarCardDto = smallCarCardDto,
         onClick = {})
 }

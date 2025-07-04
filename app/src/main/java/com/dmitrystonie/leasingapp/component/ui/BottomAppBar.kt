@@ -1,30 +1,24 @@
-package com.dmitrystonie.leasingapp.carlooking.ui
+package com.dmitrystonie.leasingapp.component.ui
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.height
 import androidx.compose.material3.BottomAppBar
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.dmitrystonie.leasingapp.R
 import com.dmitrystonie.leasingapp.ui.theme.BgBrand
 import com.dmitrystonie.leasingapp.ui.theme.BgPrimary
-import com.dmitrystonie.leasingapp.ui.theme.IndicatorLight
 import com.dmitrystonie.leasingapp.ui.theme.appFontFamily
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemColors
+import androidx.compose.ui.unit.dp
 import com.dmitrystonie.leasingapp.ui.theme.BgDisable
 import com.dmitrystonie.leasingapp.ui.theme.IndicatorMedium
 import com.dmitrystonie.leasingapp.ui.theme.TextTertiary
@@ -51,7 +45,7 @@ private val NavItemColors = NavigationBarItemColors(
 @Composable
 fun CarsBottomAppBar(modifier: Modifier = Modifier) {
     BottomAppBar(
-        modifier = modifier,
+        modifier = modifier.height(58.dp),
         containerColor = BgPrimary,
         contentColor = BgBrand,
     ) {
