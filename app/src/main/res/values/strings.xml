@@ -88,6 +88,8 @@
     <string name="leasing_sms_info_text">Вся информация была продублирована в SMS</string>
     <string name="leasing_check_status_button_text">Посмотреть статус</string>
     <string name="leasing_to_main_page_button_text">На главную</string>
+    <string name="leasing_edit_data_description">Изменить данные</string>
+
     <string name="profile_screen_title">Профиль</string>
     <string name="profile_firstname_headline">Имя*</string>
     <string name="profile_lastname_headline">Фамилия*</string>
@@ -117,4 +119,11 @@
     <string name="orders_cancel_booking_message_text">Отменить бронь?</string>
     <string name="orders_cancel_booking_cancel_button_text">Отменить</string>
     <string name="orders_cancel_booking_not_cancel_button_text">Не отменять</string>
+
+
+    <string name="indicator_created_description">Создана</string>
+    <string name="indicator_active_description">Активна</string>
+    <string name="indicator_canceled_description">Отменена</string>
+
+
 </resources>

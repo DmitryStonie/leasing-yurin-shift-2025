@@ -24,14 +24,6 @@ import com.dmitrystonie.leasingapp.ui.theme.TextTertiary
 import com.dmitrystonie.leasingapp.ui.theme.appFontFamily
 
 
-private val titleTextStyle = TextStyle(
-    color = TextPrimary,
-    fontSize = 14.sp,
-    fontWeight = FontWeight.W400,
-    fontFamily = appFontFamily,
-    letterSpacing = 0.sp,
-    lineHeight = 20.sp,
-)
 private val fieldTextTextStyle = TextStyle(
     color = TextPrimary,
     fontSize = 16.sp,
@@ -98,16 +90,6 @@ fun TextFieldPlaceholder(modifier: Modifier = Modifier, text: String) {
 
 
 @Composable
-fun TextFieldTitle(modifier: Modifier = Modifier, text: String) {
-    Text(
-        text = text,
-        modifier = modifier,
-        maxLines = 1,
-        style = titleTextStyle
-    )
-}
-
-@Composable
 fun InputTextFieldWithTitle(
     modifier: Modifier = Modifier,
     titleText: String,
@@ -117,7 +99,7 @@ fun InputTextFieldWithTitle(
     trailingIcon: @Composable (() -> Unit)?
 ) {
     Column {
-        TextFieldTitle(modifier = Modifier.padding(bottom = 6.dp), text = titleText)
+        BigTitle(modifier = Modifier.padding(bottom = 6.dp), text = titleText)
         InputTextField(
             modifier = modifier,
             text = fieldText,
