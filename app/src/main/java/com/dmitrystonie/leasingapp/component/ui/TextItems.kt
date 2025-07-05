@@ -31,6 +31,14 @@ val textItemSecondaryStyle = TextStyle(
     lineHeight = 20.sp,
 )
 
+val textItemSecondaryStyleWithoutColor = TextStyle(
+    fontSize = 14.sp,
+    fontWeight = FontWeight.W400,
+    fontFamily = appFontFamily,
+    letterSpacing = 0.sp,
+    lineHeight = 20.sp,
+)
+
 val textItemWithActionStyle = TextStyle(
     color = TextSecondary,
     fontSize = 16.sp,
