@@ -113,7 +113,7 @@ fun InputTextFieldWithTitle(
 
 @Preview(showBackground = true)
 @Composable
-fun InputTextFieldPreview(
+private fun InputTextFieldPreview(
     modifier: Modifier = Modifier,
     text: String = "",
     placeholderText: String = "Место получения",
@@ -132,7 +132,7 @@ fun InputTextFieldPreview(
 
 @Preview(showBackground = true)
 @Composable
-fun InputTextFieldWithTitlePreview(
+private fun InputTextFieldWithTitlePreview(
     modifier: Modifier = Modifier,
     fieldText: String = "ул. Покрышкина",
     titleText: String = "Место получения",

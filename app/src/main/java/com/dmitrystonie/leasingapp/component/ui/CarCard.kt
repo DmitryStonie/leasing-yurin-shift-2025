@@ -113,7 +113,7 @@ fun CarSmallCard(
 
 @Preview(showBackground = true)
 @Composable
-fun CarSmallCardPreview() {
+private fun CarSmallCardPreview() {
     val smallCarCardDto = SmallCarCardDto(
         name = "Chery Arrizo 8",
         specs = "Автомат, 2.5л",

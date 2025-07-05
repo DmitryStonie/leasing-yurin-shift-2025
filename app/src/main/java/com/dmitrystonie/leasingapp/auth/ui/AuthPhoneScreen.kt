@@ -62,6 +62,6 @@ fun AuthPhoneScreen(){
 
 @Preview(showBackground = true)
 @Composable
-fun AuthPhoneScreenPreview(){
+private fun AuthPhoneScreenPreview(){
     AuthPhoneScreen()
 }

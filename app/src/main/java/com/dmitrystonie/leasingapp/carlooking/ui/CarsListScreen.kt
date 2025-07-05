@@ -105,14 +105,9 @@ fun CarsListScreen(cars: List<SmallCarCardDto>) {
     }
 }
 
-@Composable
-fun Text(x0: String) {
-    TODO("Not yet implemented")
-}
-
 @Preview(showBackground = true)
 @Composable
-fun CarsListScreenPreview() {
+private fun CarsListScreenPreview() {
     val carsMock = listOf(
         SmallCarCardDto(
             name = "Chery Arrizo 8",

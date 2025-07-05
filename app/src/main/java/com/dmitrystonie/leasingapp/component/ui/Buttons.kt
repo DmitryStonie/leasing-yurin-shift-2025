@@ -93,14 +93,7 @@ fun ButtonText(modifier: Modifier = Modifier, text: String) {
 
 @Preview(showBackground = true)
 @Composable
-fun ColouredButtonWithIconPreview(
-    modifier: Modifier = Modifier,
-    onClick: () -> Unit,
-    buttonColors: ButtonColors,
-    text: String = "",
-    iconPainter: Painter,
-    iconContentDescription: String,
-    border: BorderStroke
+private fun ColouredButtonWithIconPreview(
 ) {
     LeasingAppTheme {
         ColouredButtonWithIcon(

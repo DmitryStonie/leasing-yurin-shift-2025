@@ -88,6 +88,6 @@ fun CarsBottomAppBar(modifier: Modifier = Modifier) {
 
 @Preview(showBackground = true)
 @Composable
-fun CarsBottomAppBarPreview(modifier: Modifier = Modifier) {
+private fun CarsBottomAppBarPreview(modifier: Modifier = Modifier) {
     CarsBottomAppBar(modifier)
 }

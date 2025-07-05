@@ -285,7 +285,7 @@ fun BorderCard(
 
 @Preview(showBackground = true)
 @Composable
-fun BorderCardPreview(onTitleClick: () -> Unit = {}, title: String = "Данные брони") {
+private fun BorderCardPreview(onTitleClick: () -> Unit = {}, title: String = "Данные брони") {
     val firstItemsMock: List<CardItemDto> = listOf(
         CardItemDto("Автомобиль", "Chery Arrizo 8"),
         CardItemDto("Место получения", "Место получения"),
@@ -360,7 +360,7 @@ fun BorderlessCard(borderlessCardDto: BorderlessCardDto) {
 
 @Preview(showBackground = true)
 @Composable
-fun BorderlessCardPreview() {
+private fun BorderlessCardPreview() {
     val borderlessCardDto = BorderlessCardDto(
         items = listOf(
             CardItemDto(
