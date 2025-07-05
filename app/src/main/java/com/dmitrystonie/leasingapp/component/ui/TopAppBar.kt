@@ -30,7 +30,7 @@ fun CarsTopAppBar(text: String, modifier: Modifier = Modifier) {
             scrolledContainerColor = BgPrimary,
             navigationIconContentColor = IndicatorLight,
             titleContentColor = IndicatorLight,
-            actionIconContentColor = IndicatorLight
+            actionIconContentColor = IndicatorLight,
         )
     )
 }
@@ -74,7 +74,7 @@ fun CarsTopAppBarWithRightIcon(
             scrolledContainerColor = BgPrimary,
             navigationIconContentColor = IndicatorLight,
             titleContentColor = TextPrimary,
-            actionIconContentColor = IndicatorLight
+            actionIconContentColor = IndicatorLight,
         )
     )
 }
@@ -105,7 +105,7 @@ fun CarsTopAppBarWithLeftIcon(
             scrolledContainerColor = BgPrimary,
             navigationIconContentColor = IndicatorLight,
             titleContentColor = TextPrimary,
-            actionIconContentColor = IndicatorLight
+            actionIconContentColor = IndicatorLight,
         )
     )
 }
@@ -118,6 +118,6 @@ fun CarsTopAppBarTitle(text: String) {
         color = TextPrimary,
         fontFamily = appFontFamily,
         fontWeight = FontWeight.W700,
-        lineHeight = 32.sp
+        lineHeight = 32.sp,
     )
 }

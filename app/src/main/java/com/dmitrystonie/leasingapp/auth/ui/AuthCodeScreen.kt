@@ -28,57 +28,100 @@ import com.dmitrystonie.leasingapp.ui.theme.TextBrandDisabled
 import com.dmitrystonie.leasingapp.ui.theme.TextInvert
 
 @Composable
-fun AuthCodeScreen(){
-    val modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 24.dp).fillMaxWidth()
-    Column(modifier = Modifier.background(BgPrimary).fillMaxWidth().fillMaxHeight(), horizontalAlignment = Alignment.CenterHorizontally) {
-        CarsTopAppBarWithLeftIcon(
-            text = stringResource(R.string.auth_screen_topbar_text),
-            icon = painterResource(R.drawable.cross),
-            iconColor = IndicatorLight,
-            description = stringResource(R.string.auth_screen_exit_icon_description),
-            onClick = {}
-        )
-        Paragraph(
-            modifier = modifier,
-            text = stringResource(R.string.auth_user_message)
-        )
-        InputTextField(
-            modifier = modifier,
-            text = "",
-            onValueChange = {},
-            placeholderText = stringResource(R.string.auth_user_phone_field_placeholder),
-        )
-        InputTextField(
-            modifier = modifier,
-            text = "",
-            onValueChange = {},
-            placeholderText = stringResource(R.string.auth_user_otp_field_placeholder),
-        )
-        ColouredButton(
-            modifier = modifier,
-            onClick = {},
-            buttonColors = ButtonDefaults.buttonColors(
-                contentColor = TextInvert,
-                containerColor = BgBrand,
-                disabledContainerColor = BgDisable,
-                disabledContentColor = TextBrandDisabled,
-            ),
-            text = stringResource(R.string.auth_screen_button_text)
-        )
-        ParagraphSecondary(
-            modifier = modifier,
-            text = stringResource(R.string.auth_screen_request_code_again_info, 0)
-        )
-        TextAction(
-            modifier = modifier,
-            text = stringResource(R.string.auth_screen_request_code_again_action_text),
-            onClick = {}
-        )
+fun AuthCodeScreen() {
+    val modifier = Modifier
+        .padding(start = 16.dp, end = 16.dp, top = 24.dp)
+        .fillMaxWidth()
+    Column(
+        modifier = Modifier
+            .background(BgPrimary)
+            .fillMaxWidth()
+            .fillMaxHeight(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        TopBar()
+
+        AuthMessage(modifier = modifier)
+
+        PhoneField(modifier = modifier)
+
+        OtpCodeField(modifier = modifier)
+
+        AuthButton(modifier = modifier)
+
+        RequestAgainMessage(modifier = modifier)
+
+        RequestAgainAction(modifier = modifier)
+
     }
+}
+
+@Composable
+private fun RequestAgainAction(modifier: Modifier = Modifier) {
+    TextAction(
+        modifier = modifier,
+        text = stringResource(R.string.auth_screen_request_code_again_action_text),
+        onClick = {})
+}
+
+@Composable
+private fun RequestAgainMessage(modifier: Modifier = Modifier) {
+    ParagraphSecondary(
+        modifier = modifier, text = stringResource(R.string.auth_screen_request_code_again_info, 0)
+    )
+}
+
+@Composable
+private fun AuthButton(modifier: Modifier = Modifier) {
+    ColouredButton(
+        modifier = modifier, onClick = {}, buttonColors = ButtonDefaults.buttonColors(
+            contentColor = TextInvert,
+            containerColor = BgBrand,
+            disabledContainerColor = BgDisable,
+            disabledContentColor = TextBrandDisabled,
+        ), text = stringResource(R.string.auth_screen_button_text)
+    )
+}
+
+@Composable
+private fun OtpCodeField(modifier: Modifier = Modifier) {
+    InputTextField(
+        modifier = modifier,
+        text = "",
+        onValueChange = {},
+        placeholderText = stringResource(R.string.auth_user_otp_field_placeholder),
+    )
+}
+
+@Composable
+private fun PhoneField(modifier: Modifier = Modifier) {
+    InputTextField(
+        modifier = modifier,
+        text = "",
+        onValueChange = {},
+        placeholderText = stringResource(R.string.auth_user_phone_field_placeholder),
+    )
+}
+
+@Composable
+private fun AuthMessage(modifier: Modifier = Modifier) {
+    Paragraph(
+        modifier = modifier, text = stringResource(R.string.auth_user_message)
+    )
+}
+
+@Composable
+private fun TopBar() {
+    CarsTopAppBarWithLeftIcon(
+        text = stringResource(R.string.auth_screen_topbar_text),
+        icon = painterResource(R.drawable.cross),
+        iconColor = IndicatorLight,
+        description = stringResource(R.string.auth_screen_exit_icon_description),
+        onClick = {})
 }
 
 @Preview(showBackground = true)
 @Composable
-private fun AuthCodeScreenPreview(){
+private fun AuthCodeScreenPreview() {
     AuthCodeScreen()
 }

@@ -32,7 +32,7 @@ fun ColouredButton(
     modifier: Modifier = Modifier,
     onClick: () -> Unit,
     buttonColors: ButtonColors,
-    text: String = ""
+    text: String? = null,
 ) {
     Button(
         onClick = onClick,
@@ -44,7 +44,7 @@ fun ColouredButton(
             pressedElevation = 8.dp,
             disabledElevation = 0.dp,
             hoveredElevation = 4.dp,
-            focusedElevation = 4.dp
+            focusedElevation = 4.dp,
         ),
     ) {
         ButtonText(text = text)
@@ -59,14 +59,14 @@ fun ColouredButtonWithIcon(
     text: String = "",
     iconPainter: Painter,
     iconContentDescription: String,
-    border: BorderStroke? = null
+    border: BorderStroke? = null,
 ) {
     Button(
         onClick = onClick,
         modifier = modifier,
         shape = RoundedCornerShape(16.dp),
         colors = buttonColors,
-        border = border
+        border = border,
     ) {
         Icon(
             painter = iconPainter,
@@ -77,9 +77,9 @@ fun ColouredButtonWithIcon(
 }
 
 @Composable
-fun ButtonText(modifier: Modifier = Modifier, text: String) {
+fun ButtonText(modifier: Modifier = Modifier, text: String? = null) {
     Text(
-        text = text,
+        text = text ?: "",
         modifier = modifier.padding(16.dp),
         fontSize = 16.sp,
         fontWeight = FontWeight.W600,

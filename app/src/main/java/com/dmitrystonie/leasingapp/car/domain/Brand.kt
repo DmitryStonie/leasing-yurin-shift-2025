@@ -1,6 +1,6 @@
 package com.dmitrystonie.leasingapp.domain.entity.car
 
-enum class Brand(val brandName: String){
+enum class Brand(val brandName: String) {
     HAVAL("Haval"),
     HYUNDAI("Hyundai"),
     VOLKSWAGEN("Volkswagen"),

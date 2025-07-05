@@ -50,7 +50,7 @@ fun InputTextField(
     placeholderText: String,
     trailingIcon: @Composable (() -> Unit)? = null,
     minLines: Int = 1,
-    maxLines: Int = 1
+    maxLines: Int = 1,
 ) {
     OutlinedTextField(
         modifier = modifier,
@@ -74,7 +74,7 @@ fun InputTextField(
             TextFieldPlaceholder(text = placeholderText)
         },
         textStyle = fieldTextTextStyle,
-        trailingIcon = trailingIcon
+        trailingIcon = trailingIcon,
     )
 }
 
@@ -97,7 +97,7 @@ fun InputTextFieldWithTitle(
     fieldText: String,
     placeholderText: String,
     onValueChange: (String) -> Unit,
-    trailingIcon: @Composable (() -> Unit)? = null
+    trailingIcon: @Composable (() -> Unit)? = null,
 ) {
     Column(modifier = modifier) {
         SmallTitleThin(modifier = Modifier.padding(bottom = 6.dp), text = titleText)
@@ -118,7 +118,7 @@ private fun InputTextFieldPreview(
     text: String = "",
     placeholderText: String = "Место получения",
     onValueChange: (String) -> Unit = {},
-    trailingIcon: @Composable (() -> Unit)? = null
+    trailingIcon: @Composable (() -> Unit)? = null,
 ) {
     InputTextField(
         modifier = modifier,
@@ -126,7 +126,7 @@ private fun InputTextFieldPreview(
         onValueChange = onValueChange,
         placeholderText = placeholderText,
         trailingIcon = trailingIcon,
-        minLines = 3
+        minLines = 3,
     )
 }
 
@@ -144,7 +144,7 @@ private fun InputTextFieldWithTitlePreview(
             tint = IconPrimary,
             contentDescription = "Desctiprion"
         )
-    }
+    },
 ) {
     InputTextFieldWithTitle(
         modifier = modifier,

@@ -10,5 +10,5 @@ data class Car(
     val location: String,
     val color: Color,
     val bodyType: BodyType,
-    val steering: Steering
+    val steering: Steering,
 )

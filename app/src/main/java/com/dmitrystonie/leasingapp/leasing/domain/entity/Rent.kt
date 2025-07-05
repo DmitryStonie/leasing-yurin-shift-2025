@@ -16,5 +16,5 @@ data class Rent (
     val birthDate: String,
     val email: String,
     val phone: String,
-    val comment: String
+    val comment: String,
 )

@@ -52,7 +52,7 @@ data class SmallCarCardDto(
     val specs: String,
     val priceDay: String,
     val pricePeriod: String,
-    val image: Painter
+    val image: Painter,
 )
 
 @Composable
@@ -61,7 +61,7 @@ fun CarSmallCard(
     imagePainter: Painter,
     imageDescription: String,
     smallCarCardDto: SmallCarCardDto,
-    onClick: () -> Unit
+    onClick: () -> Unit,
 ) {
     Row(
         horizontalArrangement = Arrangement.SpaceBetween,
@@ -94,7 +94,7 @@ fun CarSmallCard(
                 Text(
                     modifier = Modifier.padding(top = 8.dp),
                     text = smallCarCardDto.specs,
-                    style = subtitleItemStyle
+                    style = subtitleItemStyle,
                 )
             }
             Column(modifier = Modifier.padding(top = 26.dp)) {
@@ -104,7 +104,7 @@ fun CarSmallCard(
                 Text(
                     modifier = Modifier.padding(top = 2.dp),
                     text = smallCarCardDto.pricePeriod,
-                    style = subtitleItemStyle
+                    style = subtitleItemStyle,
                 )
             }
         }
@@ -119,7 +119,7 @@ private fun CarSmallCardPreview() {
         specs = "Автомат, 2.5л",
         priceDay = "5 000 ₽",
         pricePeriod = "70 000 ₽ за 14 дней",
-        image = painterResource(R.drawable.car_sample)
+        image = painterResource(R.drawable.car_sample),
     )
     CarSmallCard(
         imagePainter = smallCarCardDto.image,
