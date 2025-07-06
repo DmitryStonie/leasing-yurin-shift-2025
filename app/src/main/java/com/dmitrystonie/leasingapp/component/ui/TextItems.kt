@@ -11,6 +11,7 @@ import androidx.compose.ui.unit.sp
 import com.dmitrystonie.leasingapp.ui.theme.TextPrimary
 import com.dmitrystonie.leasingapp.ui.theme.TextQuartenery
 import com.dmitrystonie.leasingapp.ui.theme.TextSecondary
+import com.dmitrystonie.leasingapp.ui.theme.TextTertiary
 import com.dmitrystonie.leasingapp.ui.theme.appFontFamily
 
 val textItemStyle = TextStyle(
@@ -76,6 +77,15 @@ private val titleTextStyle = TextStyle(
     lineHeight = 32.sp,
 )
 
+private val smallestTitleTextStyle = TextStyle(
+    color = TextTertiary,
+    fontSize = 12.sp,
+    fontWeight = FontWeight.W400,
+    fontFamily = appFontFamily,
+    letterSpacing = 0.sp,
+    lineHeight = 16.sp,
+)
+
 @Composable
 fun Paragraph(modifier: Modifier = Modifier, text: String) {
     Text(
@@ -97,16 +107,13 @@ fun TextAction(modifier: Modifier = Modifier, text: String, onClick: () -> Unit)
         modifier = modifier.clickable(true) { onClick() },
         style = textItemWithActionStyle,
 
-    )
+        )
 }
 
 @Composable
 fun SmallTitle(modifier: Modifier = Modifier, text: String) {
     Text(
-        text = text,
-        modifier = modifier,
-        maxLines = 1,
-        style = smallTitleTextStyle
+        text = text, modifier = modifier, maxLines = 1, style = smallTitleTextStyle
     )
 }
 
@@ -114,20 +121,21 @@ fun SmallTitle(modifier: Modifier = Modifier, text: String) {
 @Composable
 fun SmallTitleThin(modifier: Modifier = Modifier, text: String) {
     Text(
-        text = text,
-        modifier = modifier,
-        maxLines = 1,
-        style = primaryTitleThinTextStyle
+        text = text, modifier = modifier, maxLines = 1, style = primaryTitleThinTextStyle
     )
 }
 
 @Composable
 fun BigTitle(modifier: Modifier = Modifier, text: String) {
     Text(
-        text = text,
-        modifier = modifier,
-        maxLines = 2,
-        style = titleTextStyle
+        text = text, modifier = modifier, maxLines = 2, style = titleTextStyle
+    )
+}
+
+@Composable
+fun SmallestTitle(modifier: Modifier = Modifier, text: String) {
+    Text(
+        text = text, modifier = modifier, style = smallestTitleTextStyle
     )
 }
 

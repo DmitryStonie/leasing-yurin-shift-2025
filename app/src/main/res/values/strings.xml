@@ -22,6 +22,8 @@
     <string name="cars_filter_transmission_automatic_title">Автомат</string>
     <string name="cars_filter_transmission_mechanic_title">Механика</string>
     <string name="cars_filter_price_slider_headline">Стоимость</string>
+    <string name="cars_filter_price_slider_from">%d ₽</string>
+    <string name="cars_filter_price_slider_to">до %d ₽</string>
     <string name="cars_filter_color_selector_headline">Цвет</string>
     <string name="cars_filter_reset_button_title">Сбросить все фильтры</string>
     <string name="cars_filter_find_button_title">Найти</string>
@@ -128,6 +130,12 @@
     <string name="indicator_created_description">Создана</string>
     <string name="indicator_active_description">Активна</string>
     <string name="indicator_canceled_description">Отменена</string>
+
+    <string name="filters_money_slider_description">Укажите стоимость аренды</string>
+    <string name="filters_screen_exit_description">Закрыть фильтры</string>
+    <string name="filters_select_brand_description">Выбрать марку</string>
+    <string name="filters_select_body_type_description">Выбрать тип кузова</string>
+
 
 
 </resources>

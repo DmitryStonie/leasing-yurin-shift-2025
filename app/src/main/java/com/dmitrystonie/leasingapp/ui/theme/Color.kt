@@ -18,6 +18,7 @@ val BgTertiary = Color(0xFFF9FAFB)
 val BgDisable = Color(0xFFF3F4F6)
 
 val BorderExtraLight = Color(0xFFE3E5E5)
+val BorderBitLight = Color(0xFFE0E0E0)
 val BorderLight = Color(0xFFCED2DA)
 val BorderMedium = Color(0xFF97A1AF)
 
@@ -45,3 +46,11 @@ val IndicatorFocused = Color(0xFFDB0019)
 val IndicatorFocusedAlternative = Color(0xFFDB0019)
 
 val IconPrimary = Color(0xFF9E9E9E)
+
+val ColorWhite = Color(0xFFFFFFFF)
+val ColorBlack = Color(0xFF000000)
+val ColorBrown = Color(0xFF764300)
+val ColorGreen = Color(0xFF377F27)
+val ColorRed = Color(0xFFCA251C)
+val ColorYellow = Color(0xFFE8DD48)
+val ColorBlue = Color(0xFF2F54E9)

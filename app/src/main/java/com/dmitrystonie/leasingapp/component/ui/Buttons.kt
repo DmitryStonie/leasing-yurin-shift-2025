@@ -33,19 +33,14 @@ fun ColouredButton(
     onClick: () -> Unit,
     buttonColors: ButtonColors,
     text: String? = null,
+    border: BorderStroke? = null,
 ) {
     Button(
         onClick = onClick,
         modifier = modifier,
         shape = RoundedCornerShape(16.dp),
         colors = buttonColors,
-        elevation = ButtonDefaults.buttonElevation(
-            defaultElevation = 2.dp,
-            pressedElevation = 8.dp,
-            disabledElevation = 0.dp,
-            hoveredElevation = 4.dp,
-            focusedElevation = 4.dp,
-        ),
+        border = border,
     ) {
         ButtonText(text = text)
     }
