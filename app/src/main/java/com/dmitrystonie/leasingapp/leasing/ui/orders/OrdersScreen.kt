@@ -1,4 +1,4 @@
-package com.dmitrystonie.leasingapp.leasing.ui
+package com.dmitrystonie.leasingapp.leasing.ui.orders
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
