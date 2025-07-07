@@ -31,7 +31,8 @@ fun CarsTopAppBar(text: String, modifier: Modifier = Modifier) {
             navigationIconContentColor = IndicatorLight,
             titleContentColor = IndicatorLight,
             actionIconContentColor = IndicatorLight,
-        )
+        ),
+        modifier = modifier
     )
 }
 
@@ -106,7 +107,7 @@ fun CarsTopAppBarWithLeftIcon(
             navigationIconContentColor = IndicatorLight,
             titleContentColor = TextPrimary,
             actionIconContentColor = IndicatorLight,
-        )
+        ),
     )
 }
 

@@ -33,7 +33,8 @@
     <string name="cars_card_body_type_title">Тип кузова</string>
     <string name="cars_card_color_title">Цвет</string>
     <string name="cars_card_price_title">Стоимость</string>
-    <string name="cars_card_price_field_title">Итого: $1%d ₽</string>
+    <string name="cars_card_price_field_title">Итого: %d ₽</string>
+    <string name="cars_card_price_dates_title">Aренда: %d - %d %s %d (%d дней)</string>
     <string name="cars_card_rent_title">Аренда</string>
     <string name="cars_card_back_button_title">Назад</string>
     <string name="cars_card_rent_button_title">Забронировать</string>
