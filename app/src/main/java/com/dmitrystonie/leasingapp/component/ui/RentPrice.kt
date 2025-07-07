@@ -9,18 +9,27 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dmitrystonie.leasingapp.R
+import com.dmitrystonie.leasingapp.car.domain.Rent
+import com.dmitrystonie.leasingapp.domain.entity.car.BodyType
+import com.dmitrystonie.leasingapp.domain.entity.car.Brand
+import com.dmitrystonie.leasingapp.domain.entity.car.Car
+import com.dmitrystonie.leasingapp.domain.entity.car.Color
+import com.dmitrystonie.leasingapp.domain.entity.car.Media
+import com.dmitrystonie.leasingapp.domain.entity.car.Steering
+import com.dmitrystonie.leasingapp.domain.entity.car.Transmission
 import com.dmitrystonie.leasingapp.ui.theme.BorderExtraLight
 import com.dmitrystonie.leasingapp.ui.theme.TextSecondary
+import com.dmitrystonie.leasingapp.util.daysDuration
+import com.dmitrystonie.leasingapp.util.fromToDay
+import com.dmitrystonie.leasingapp.util.toToDay
+import com.dmitrystonie.leasingapp.util.toToMonth
+import com.dmitrystonie.leasingapp.util.toToYear
 
 @Composable
 fun RentPrice(
     modifier: Modifier = Modifier,
     price: Int,
-    rentFrom: Int,
-    rentTo: Int,
-    rentMonth: String,
-    rentYear: Int,
-    rentLength: Int
+    rent: Rent,
 ) {
     Column(modifier = modifier) {
         Subtitle(
@@ -30,19 +39,19 @@ fun RentPrice(
             color = BorderExtraLight, modifier = Modifier.padding(vertical = 16.dp)
         )
         PriceTitle(
-            modifier = Modifier.padding(bottom = 16.dp), price = price
+            modifier = Modifier.padding(bottom = 16.dp), price = price * rent.daysDuration()
         )
         Paragraph(
             modifier = Modifier.padding(bottom = 16.dp),
             color = TextSecondary,
             text = stringResource(
                 R.string.cars_card_price_dates_title,
-                rentFrom,
-                rentTo,
-                rentMonth,
-                rentYear,
-                rentLength
-            ),
+                rent.fromToDay(),
+                rent.toToDay(),
+                rent.toToMonth(),
+                rent.toToYear(),
+                rent.daysDuration()
+            )
         )
     }
 }
@@ -50,12 +59,27 @@ fun RentPrice(
 @Preview(showBackground = true)
 @Composable
 fun RentPricePreview() {
+    val carMock = Car(
+        id = "1",
+        name = "Model X",
+        brand = Brand.HAVAL,
+        media = listOf(Media(
+            url = "/static/images/cars/haval-jolion.webp",
+            isCover = true
+        )),
+        transmission = Transmission.AUTOMATIC,
+        price = 15000,
+        location = "Москва, ул. Пушкина 10",
+        color = Color.BLACK,
+        bodyType = BodyType.SEDAN,
+        steering = Steering.LEFT,
+        rents = listOf(Rent(
+            startDate = 1717236000000,
+            endDate = 1717610400000
+        ))
+    )
     RentPrice(
-        price = 35000,
-        rentFrom = 10,
-        rentTo = 24,
-        rentMonth = "апреля",
-        rentYear = 2025,
-        rentLength = 14
+        price = 20000,
+        rent = carMock.rents[0]
     )
 }

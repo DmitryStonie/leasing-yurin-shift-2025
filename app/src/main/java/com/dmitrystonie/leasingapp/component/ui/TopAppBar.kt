@@ -1,5 +1,6 @@
 package com.dmitrystonie.leasingapp.component.ui
 
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -11,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.dmitrystonie.leasingapp.ui.theme.BgPrimary
 import com.dmitrystonie.leasingapp.ui.theme.IndicatorLight
@@ -32,7 +34,8 @@ fun CarsTopAppBar(text: String, modifier: Modifier = Modifier) {
             titleContentColor = IndicatorLight,
             actionIconContentColor = IndicatorLight,
         ),
-        modifier = modifier
+        modifier = modifier,
+        windowInsets = WindowInsets(top = 0.dp),
     )
 }
 
@@ -45,7 +48,8 @@ fun CarsTopAppBarWithoutIcons(
     TopAppBar(
         title = {
             CarsTopAppBarTitle(text)
-        }
+        },
+        windowInsets = WindowInsets(top = 0.dp),
     )
 }
 
@@ -76,7 +80,8 @@ fun CarsTopAppBarWithRightIcon(
             navigationIconContentColor = IndicatorLight,
             titleContentColor = TextPrimary,
             actionIconContentColor = IndicatorLight,
-        )
+        ),
+        windowInsets = WindowInsets(top = 0.dp),
     )
 }
 
@@ -108,6 +113,7 @@ fun CarsTopAppBarWithLeftIcon(
             titleContentColor = TextPrimary,
             actionIconContentColor = IndicatorLight,
         ),
+        windowInsets = WindowInsets(top = 0.dp),
     )
 }
 

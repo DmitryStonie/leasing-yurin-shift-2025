@@ -1,6 +1,5 @@
 package com.dmitrystonie.leasingapp.component.ui
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -17,17 +16,29 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.dmitrystonie.leasingapp.R
+import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
+import com.bumptech.glide.integration.compose.GlideImage
+import com.bumptech.glide.integration.compose.placeholder
+import com.dmitrystonie.leasingapp.carlooking.presentation.getCoverImageUrl
+import com.dmitrystonie.leasingapp.domain.entity.car.Car
 import com.dmitrystonie.leasingapp.ui.theme.TextPrimary
 import com.dmitrystonie.leasingapp.ui.theme.TextSecondary
 import com.dmitrystonie.leasingapp.ui.theme.Transparent
 import com.dmitrystonie.leasingapp.ui.theme.appFontFamily
+import com.dmitrystonie.leasingapp.R
+import com.dmitrystonie.leasingapp.car.domain.Rent
+import com.dmitrystonie.leasingapp.domain.entity.car.BodyType
+import com.dmitrystonie.leasingapp.domain.entity.car.Brand
+import com.dmitrystonie.leasingapp.domain.entity.car.Color
+import com.dmitrystonie.leasingapp.domain.entity.car.Media
+import com.dmitrystonie.leasingapp.domain.entity.car.Steering
+import com.dmitrystonie.leasingapp.domain.entity.car.Transmission
 
 val titleItemStyle = TextStyle(
     color = TextPrimary,
@@ -47,21 +58,12 @@ val subtitleItemStyle = TextStyle(
     lineHeight = 16.sp,
 )
 
-data class SmallCarCardDto(
-    val name: String,
-    val specs: String,
-    val priceDay: String,
-    val pricePeriod: String,
-    val image: Painter,
-)
-
+@OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun CarSmallCard(
     modifier: Modifier = Modifier,
-    imagePainter: Painter,
-    imageDescription: String,
-    smallCarCardDto: SmallCarCardDto,
-    onClick: () -> Unit,
+    car: Car,
+    onClick: (String) -> Unit,
 ) {
     Row(
         horizontalArrangement = Arrangement.SpaceBetween,
@@ -69,17 +71,19 @@ fun CarSmallCard(
         modifier = modifier
             .padding(horizontal = 24.dp)
             .fillMaxWidth()
-            .clickable(true, onClick = onClick)
+            .clickable(true, onClick = { onClick(car.id) })
     ) {
-        Image(
-            imagePainter, imageDescription,
+        GlideImage(
+            model = car.getCoverImageUrl(), contentDescription = car.name,
             modifier = Modifier
                 .border(
                     width = 0.dp, color = Transparent, shape = RoundedCornerShape(8.dp)
                 )
                 .height(116.dp)
                 .width(152.dp),
-            contentScale = ContentScale.Fit,
+            contentScale = ContentScale.FillWidth,
+            loading = placeholder(R.drawable.placeholder),
+            failure = placeholder(R.drawable.placeholder),
         )
         Column(
             verticalArrangement = Arrangement.SpaceBetween,
@@ -89,21 +93,21 @@ fun CarSmallCard(
         ) {
             Column {
                 Text(
-                    text = smallCarCardDto.name, style = titleItemStyle
+                    text = car.name, style = titleItemStyle
                 )
                 Text(
                     modifier = Modifier.padding(top = 8.dp),
-                    text = smallCarCardDto.specs,
+                    text = car.transmission.type,
                     style = subtitleItemStyle,
                 )
             }
             Column(modifier = Modifier.padding(top = 26.dp)) {
                 Text(
-                    text = smallCarCardDto.priceDay, style = titleItemStyle
+                    text = stringResource(R.string.cars_card_price_text, car.price), style = titleItemStyle
                 )
                 Text(
                     modifier = Modifier.padding(top = 2.dp),
-                    text = smallCarCardDto.pricePeriod,
+                    text = stringResource(R.string.cars_card_price_offer_text, (car.price * 14).toString(), "14"),
                     style = subtitleItemStyle,
                 )
             }
@@ -114,28 +118,40 @@ fun CarSmallCard(
 @Preview(showBackground = true)
 @Composable
 private fun CarSmallCardPreview() {
-    val smallCarCardDto = SmallCarCardDto(
-        name = "Chery Arrizo 8",
-        specs = "Автомат, 2.5л",
-        priceDay = "5 000 ₽",
-        pricePeriod = "70 000 ₽ за 14 дней",
-        image = painterResource(R.drawable.car_sample),
+    val carMock = Car(
+        id = "1",
+        name = "Model X",
+        brand = Brand.HAVAL,
+        media = listOf(Media(
+            url = "/static/images/cars/haval-jolion.webp",
+            isCover = true
+        )),
+        transmission = Transmission.AUTOMATIC,
+        price = 15000,
+        location = "Москва, ул. Пушкина 10",
+        color = Color.BLACK,
+        bodyType = BodyType.SEDAN,
+        steering = Steering.LEFT,
+        rents = listOf(Rent(
+            startDate = 1717236000000,
+            endDate = 1717610400000
+        ))
     )
+
     CarSmallCard(
-        imagePainter = smallCarCardDto.image,
-        imageDescription = smallCarCardDto.name,
-        smallCarCardDto = smallCarCardDto,
-        onClick = {})
+        car = carMock,
+        onClick = {}
+    )
 }
 
+@OptIn(ExperimentalGlideComposeApi::class)
 @Composable
-fun CarImage(modifier: Modifier = Modifier, painter: Painter, description: String){
-    Image(
-        painter, description,
-        modifier = modifier
-            .border(
+fun CarImage(modifier: Modifier = Modifier, url: String, description: String) {
+    GlideImage(
+        model = url, contentDescription = description,
+        modifier = modifier.border(
                 width = 0.dp, color = Transparent, shape = RoundedCornerShape(8.dp)
             ),
-        contentScale = ContentScale.FillWidth,
+        contentScale = ContentScale.Fit,
     )
 }
