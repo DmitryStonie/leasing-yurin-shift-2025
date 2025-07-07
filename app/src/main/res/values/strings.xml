@@ -34,12 +34,14 @@
     <string name="cars_card_color_title">Цвет</string>
     <string name="cars_card_price_title">Стоимость</string>
     <string name="cars_card_price_field_title">Итого: %d ₽</string>
-    <string name="cars_card_price_dates_title">Aренда: %d - %d %s %d (%d дней)</string>
+    <string name="cars_card_price_dates_title">Aренда: %s - %s %s %s (%s дней)</string>
     <string name="cars_card_rent_title">Аренда</string>
     <string name="cars_card_back_button_title">Назад</string>
     <string name="cars_card_rent_button_title">Забронировать</string>
     <string name="cars_rent_date_icon_description">Укажите дату</string>
     <string name="cars_filter_button_icon_description">Выбрать фильтры</string>
+    <string name="cars_card_price_offer_text">%s ₽ за %s дней</string>
+    <string name="cars_card_price_text">%s ₽</string>
 
     <string name="arrow_2_icon_description">Укажите стоимость</string>
     <string name="calendar_icon_description">Укажите дату аренды</string>
@@ -136,6 +138,11 @@
     <string name="filters_screen_exit_description">Закрыть фильтры</string>
     <string name="filters_select_brand_description">Выбрать марку</string>
     <string name="filters_select_body_type_description">Выбрать тип кузова</string>
+
+
+    <string name="loading_error_title">Ошибка</string>
+    <string name="loading_error_text">Произошла ошибка при загрузке данных</string>
+    <string name="loading_error_button_text">Повторить</string>
 
 
 
