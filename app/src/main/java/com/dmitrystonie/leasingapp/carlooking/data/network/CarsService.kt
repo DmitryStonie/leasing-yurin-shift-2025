@@ -8,10 +8,10 @@ import retrofit2.http.Query
 import retrofit2.http.Path
 
 interface CarsService {
-    @GET("api/cars/info")
+    @GET("/api/cars/info/{id}")
     suspend fun getCar(@Path("id") carId: String): Response<CarResponse>
 
-    @GET("api/cars/info")
+    @GET("/api/cars/info")
     suspend fun getCars(
         @Query("search") search: String?,
         @Query("maxPrice") maxPrice: Int?,

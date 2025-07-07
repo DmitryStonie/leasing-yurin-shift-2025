@@ -6,20 +6,17 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import okhttp3.OkHttpClient
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import javax.inject.Named
-import javax.inject.Qualifier
 import javax.inject.Singleton
+import com.dmitrystonie.leasingapp.BuildConfig
 
 @Module
 @InstallIn(SingletonComponent::class)
 object RetrofitMoonModule {
 
     @Provides
-    fun providesBaseUrl(): String = "https://shift-intensive.ru/"
+    fun providesBaseUrl(): String = BuildConfig.LEASING_API_BASE_URL
 
     @Provides
     @Singleton

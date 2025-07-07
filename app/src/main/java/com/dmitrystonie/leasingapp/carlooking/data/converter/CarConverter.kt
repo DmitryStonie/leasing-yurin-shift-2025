@@ -1,5 +1,6 @@
 package com.dmitrystonie.leasingapp.carlooking.data.converter
 
+import com.dmitrystonie.leasingapp.car.domain.Rent
 import com.dmitrystonie.leasingapp.carlooking.data.datasource.dto.CarDto
 import com.dmitrystonie.leasingapp.carlooking.data.datasource.dto.CarWithRentDto
 import com.dmitrystonie.leasingapp.domain.entity.car.BodyType
@@ -61,6 +62,7 @@ fun CarDto.toCar(): Car {
             Steering.RIGHT.type -> Steering.RIGHT
             else -> Steering.OTHER
         },
+        rents = if(this.rents != null) this.rents.map{rent -> Rent(rent.startDate, rent.endDate)} else listOf(),
     )
 }
 
@@ -115,5 +117,6 @@ fun CarWithRentDto.toCar(): Car {
             Steering.RIGHT.type -> Steering.RIGHT
             else -> Steering.OTHER
         },
+        rents = if(this.rents != null) this.rents.map{rent -> Rent(rent.startDate, rent.endDate)} else listOf(),
     )
 }

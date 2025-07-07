@@ -1,8 +1,5 @@
-package com.dmitrystonie.leasingapp.carlooking.ui
+package com.dmitrystonie.leasingapp.carlooking.ui.carlist
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -15,48 +12,26 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dmitrystonie.leasingapp.R
 import com.dmitrystonie.leasingapp.component.ui.CarSmallCard
 import com.dmitrystonie.leasingapp.component.ui.CarsTopAppBar
 import com.dmitrystonie.leasingapp.component.ui.ColouredButtonWithIcon
 import com.dmitrystonie.leasingapp.component.ui.InputTextFieldWithTitle
-import com.dmitrystonie.leasingapp.component.ui.SmallCarCardDto
-import com.dmitrystonie.leasingapp.ui.theme.BgPrimary
+import com.dmitrystonie.leasingapp.domain.entity.car.Car
 import com.dmitrystonie.leasingapp.ui.theme.IconPrimary
 import com.dmitrystonie.leasingapp.ui.theme.TextInvert
 import com.dmitrystonie.leasingapp.ui.theme.TextSecondary
 
-
 @Composable
-fun CarsListScreen(cars: List<SmallCarCardDto>) {
-    Column(
-        verticalArrangement = Arrangement.Top, modifier = Modifier.background(color = BgPrimary)
-    ) {
-        TopBar()
-
-        SearchField()
-
-        RentDateField()
-
-        FiltersButton()
-
-        CarsList(cars)
-        
-    }
-
-}
-
-@Composable
-private fun TopBar() {
+internal fun TopBar() {
     CarsTopAppBar(
         text = stringResource(R.string.cars_top_app_bar_title),
     )
 }
 
 @Composable
-private fun CarsList(cars: List<SmallCarCardDto>) {
+internal fun CarsList(cars: List<Car>, onClick: (String) -> Unit) {
     LazyColumn(
         modifier = Modifier.fillMaxSize(), userScrollEnabled = true,
         contentPadding = PaddingValues(bottom = 24.dp),
@@ -64,23 +39,21 @@ private fun CarsList(cars: List<SmallCarCardDto>) {
         items(cars) { item ->
             CarSmallCard(
                 modifier = Modifier.padding(top = 24.dp),
-                imagePainter = item.image,
-                imageDescription = item.name,
-                smallCarCardDto = item,
-                onClick = {})
+                car = item,
+                onClick = onClick)
         }
     }
 }
 
 @Composable
-private fun FiltersButton() {
+internal fun FiltersButton(onClick: () -> Unit) {
     ColouredButtonWithIcon(
         modifier = Modifier
             .padding(
                 top = 24.dp, start = 16.dp, end = 16.dp, bottom = 16.dp
             )
             .fillMaxWidth(),
-        onClick = {},
+        onClick = onClick,
         buttonColors = ButtonColors(
             containerColor = TextSecondary,
             contentColor = TextInvert,
@@ -94,7 +67,7 @@ private fun FiltersButton() {
 }
 
 @Composable
-private fun RentDateField() {
+internal fun RentDateField() {
     InputTextFieldWithTitle(
         modifier = Modifier
             .padding(top = 24.dp, start = 16.dp, end = 16.dp)
@@ -114,7 +87,7 @@ private fun RentDateField() {
 }
 
 @Composable
-private fun SearchField() {
+internal fun SearchField() {
     InputTextFieldWithTitle(
         modifier = Modifier
             .padding(top = 24.dp, start = 16.dp, end = 16.dp)
@@ -124,49 +97,4 @@ private fun SearchField() {
         placeholderText = stringResource(R.string.cars_search_field_hint),
         onValueChange = {},
     )
-}
-
-@Preview(showBackground = true)
-@Composable
-private fun CarsListScreenPreview() {
-    val carsMock = listOf(
-        SmallCarCardDto(
-            name = "Chery Arrizo 8",
-            specs = "Автомат, 2.5л",
-            priceDay = "5 000 ₽",
-            pricePeriod = "70 000 ₽ за 14 дней",
-            image = painterResource(R.drawable.car_sample)
-        ), SmallCarCardDto(
-            name = "Chery Arrizo 8",
-            specs = "Автомат, 2.5л",
-            priceDay = "5 000 ₽",
-            pricePeriod = "70 000 ₽ за 14 дней",
-            image = painterResource(R.drawable.car_sample)
-        ), SmallCarCardDto(
-            name = "Chery Arrizo 8",
-            specs = "Автомат, 2.5л",
-            priceDay = "5 000 ₽",
-            pricePeriod = "70 000 ₽ за 14 дней",
-            image = painterResource(R.drawable.car_sample)
-        ), SmallCarCardDto(
-            name = "Chery Arrizo 8",
-            specs = "Автомат, 2.5л",
-            priceDay = "5 000 ₽",
-            pricePeriod = "70 000 ₽ за 14 дней",
-            image = painterResource(R.drawable.car_sample)
-        ), SmallCarCardDto(
-            name = "Chery Arrizo 8",
-            specs = "Автомат, 2.5л",
-            priceDay = "5 000 ₽",
-            pricePeriod = "70 000 ₽ за 14 дней",
-            image = painterResource(R.drawable.car_sample)
-        ), SmallCarCardDto(
-            name = "Chery Arrizo 8",
-            specs = "Автомат, 2.5л",
-            priceDay = "5 000 ₽",
-            pricePeriod = "70 000 ₽ за 14 дней",
-            image = painterResource(R.drawable.car_sample)
-        )
-    )
-    CarsListScreen(cars = carsMock)
 }

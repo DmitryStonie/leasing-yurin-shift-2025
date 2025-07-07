@@ -18,7 +18,9 @@ import com.dmitrystonie.leasingapp.ui.theme.BgPrimary
 import com.dmitrystonie.leasingapp.ui.theme.appFontFamily
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemColors
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.unit.dp
+import com.dmitrystonie.leasingapp.ui.NavigationOption
 import com.dmitrystonie.leasingapp.ui.theme.BgDisable
 import com.dmitrystonie.leasingapp.ui.theme.IndicatorMedium
 import com.dmitrystonie.leasingapp.ui.theme.TextTertiary
@@ -43,51 +45,73 @@ private val NavItemColors = NavigationBarItemColors(
 )
 
 @Composable
-fun CarsBottomAppBar(modifier: Modifier = Modifier) {
+fun CarsBottomAppBar(
+    navigationOptions: List<NavigationOption>,
+    selectedNavigationOption: NavigationOption,
+    onItemClicked: (NavigationOption) -> Unit,
+    modifier: Modifier = Modifier
+) {
     BottomAppBar(
         modifier = modifier.height(58.dp),
         containerColor = BgPrimary,
         contentColor = BgBrand,
     ) {
-        NavigationBarItem(selected = true, onClick = {}, icon = {
-            Icon(
-                painter = painterResource(R.drawable.car),
-                contentDescription = stringResource(R.string.car_icon_description)
+        for (option in navigationOptions) {
+            NavigationBarItem(
+                selected = selectedNavigationOption == option, onClick = { onItemClicked(option) },
+                icon = {
+                    Icon(
+                        painter = getIconPainter(option),
+                        contentDescription = getIconDescription(option),
+                    )
+                },
+                colors = NavItemColors,
+                label = {
+                    Text(
+                        text = getIconText(option),
+                        style = AppBarTextStyle,
+                    )
+                },
             )
-        }, colors = NavItemColors, label = {
-            Text(
-                text = stringResource(R.string.bottom_app_bar_cars_title),
-                style = AppBarTextStyle,
-            )
-        })
-        NavigationBarItem(selected = false, onClick = {}, icon = {
-            Icon(
-                painter = painterResource(R.drawable.time),
-                contentDescription = stringResource(R.string.time_icon_description)
-            )
-        }, colors = NavItemColors, label = {
-            Text(
-                text = stringResource(R.string.bottom_app_bar_cars_title),
-                style = AppBarTextStyle,
-            )
-        })
-        NavigationBarItem(selected = false, onClick = {}, icon = {
-            Icon(
-                painter = painterResource(R.drawable.user),
-                contentDescription = stringResource(R.string.user_icon_description)
-            )
-        }, colors = NavItemColors, label = {
-            Text(
-                text = stringResource(R.string.bottom_app_bar_cars_title),
-                style = AppBarTextStyle,
-            )
-        })
+        }
 
     }
 }
 
+@Composable
+private fun getIconPainter(option: NavigationOption): Painter = painterResource(
+    when (option) {
+        NavigationOption.CARS -> R.drawable.car
+        NavigationOption.ORDERS -> R.drawable.time
+        NavigationOption.ACCOUNT -> R.drawable.user
+    }
+)
+
+@Composable
+private fun getIconDescription(option: NavigationOption): String = stringResource(
+    when (option) {
+        NavigationOption.CARS -> R.string.car_icon_description
+        NavigationOption.ORDERS -> R.string.time_icon_description
+        NavigationOption.ACCOUNT -> R.string.user_icon_description
+    }
+)
+
+@Composable
+private fun getIconText(option: NavigationOption): String = stringResource(
+    when (option) {
+        NavigationOption.CARS -> R.string.bottom_app_bar_cars_title
+        NavigationOption.ORDERS -> R.string.bottom_app_bar_orders_title
+        NavigationOption.ACCOUNT -> R.string.bottom_app_bar_profile_title
+    }
+)
+
 @Preview(showBackground = true)
 @Composable
 private fun CarsBottomAppBarPreview(modifier: Modifier = Modifier) {
-    CarsBottomAppBar(modifier)
+    CarsBottomAppBar(
+        navigationOptions = NavigationOption.entries,
+        selectedNavigationOption = NavigationOption.CARS,
+        onItemClicked = {},
+        modifier = modifier
+    )
 }
