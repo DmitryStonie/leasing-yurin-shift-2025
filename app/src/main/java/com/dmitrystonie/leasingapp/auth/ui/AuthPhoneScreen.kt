@@ -24,6 +24,7 @@ import com.dmitrystonie.leasingapp.ui.theme.BgPrimary
 import com.dmitrystonie.leasingapp.ui.theme.IndicatorLight
 import com.dmitrystonie.leasingapp.ui.theme.TextBrandDisabled
 import com.dmitrystonie.leasingapp.ui.theme.TextInvert
+import com.dmitrystonie.leasingapp.ui.theme.TextPrimary
 
 @Composable
 fun AuthPhoneScreen() {
@@ -61,7 +62,7 @@ private fun PhoneField(modifier: Modifier = Modifier) {
 @Composable
 private fun AuthMessage(modifier: Modifier = Modifier) {
     Paragraph(
-        modifier = modifier, text = stringResource(R.string.auth_user_message)
+        modifier = modifier, color = TextPrimary, text = stringResource(R.string.auth_user_message)
     )
 }
 

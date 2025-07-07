@@ -32,8 +32,8 @@ import com.dmitrystonie.leasingapp.ui.theme.TextPrimary
 import com.dmitrystonie.leasingapp.ui.theme.TextTertiary
 
 @Composable
-fun MultipleButtonWithLabel(options: List<String>, label: String){
-    Column {
+fun MultipleButtonWithLabel(modifier: Modifier = Modifier, options: List<String>, label: String){
+    Column(modifier = modifier) {
         SmallTitleThin(modifier = Modifier.padding(bottom = 4.dp), text = label)
         MultipleButton(options)
     }
@@ -81,5 +81,8 @@ fun MultipleButton(options: List<String>) {
 @Preview(showBackground = true)
 @Composable
 fun TripleButtonPreview() {
-    MultipleButtonWithLabel(listOf("Любой", "Левый", "Правый"), "Руль")
+    MultipleButtonWithLabel(
+        options = listOf("Любой", "Левый", "Правый"),
+        label = "Руль",
+    )
 }

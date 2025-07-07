@@ -127,3 +127,15 @@ private fun CarSmallCardPreview() {
         smallCarCardDto = smallCarCardDto,
         onClick = {})
 }
+
+@Composable
+fun CarImage(modifier: Modifier = Modifier, painter: Painter, description: String){
+    Image(
+        painter, description,
+        modifier = modifier
+            .border(
+                width = 0.dp, color = Transparent, shape = RoundedCornerShape(8.dp)
+            ),
+        contentScale = ContentScale.FillWidth,
+    )
+}

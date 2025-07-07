@@ -4,10 +4,13 @@ import androidx.compose.foundation.clickable
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
+import com.dmitrystonie.leasingapp.R
 import com.dmitrystonie.leasingapp.ui.theme.TextPrimary
 import com.dmitrystonie.leasingapp.ui.theme.TextQuartenery
 import com.dmitrystonie.leasingapp.ui.theme.TextSecondary
@@ -15,13 +18,13 @@ import com.dmitrystonie.leasingapp.ui.theme.TextTertiary
 import com.dmitrystonie.leasingapp.ui.theme.appFontFamily
 
 val textItemStyle = TextStyle(
-    color = TextPrimary,
     fontSize = 16.sp,
     fontWeight = FontWeight.W400,
     fontFamily = appFontFamily,
     letterSpacing = 0.sp,
     lineHeight = 24.sp,
 )
+
 
 val textItemSecondaryStyle = TextStyle(
     color = TextQuartenery,
@@ -44,6 +47,16 @@ val textItemWithActionStyle = TextStyle(
     color = TextSecondary,
     fontSize = 16.sp,
     fontWeight = FontWeight.W600,
+    fontFamily = appFontFamily,
+    letterSpacing = 0.sp,
+    lineHeight = 24.sp,
+    textAlign = TextAlign.Center
+)
+
+val textSubtitleItemStyle = TextStyle(
+    color = TextPrimary,
+    fontSize = 16.sp,
+    fontWeight = FontWeight.W500,
     fontFamily = appFontFamily,
     letterSpacing = 0.sp,
     lineHeight = 24.sp,
@@ -86,10 +99,19 @@ private val smallestTitleTextStyle = TextStyle(
     lineHeight = 16.sp,
 )
 
+private val priceTitleTextStyle = TextStyle(
+    color = TextPrimary,
+    fontSize = 20.sp,
+    fontWeight = FontWeight.W600,
+    fontFamily = appFontFamily,
+    letterSpacing = 0.sp,
+    lineHeight = 24.sp,
+)
+
 @Composable
-fun Paragraph(modifier: Modifier = Modifier, text: String) {
+fun Paragraph(modifier: Modifier = Modifier, color: Color, text: String) {
     Text(
-        text = text, modifier = modifier, style = textItemStyle
+        text = text, modifier = modifier, style = textItemStyle, color = color
     )
 }
 
@@ -136,6 +158,20 @@ fun BigTitle(modifier: Modifier = Modifier, text: String) {
 fun SmallestTitle(modifier: Modifier = Modifier, text: String) {
     Text(
         text = text, modifier = modifier, style = smallestTitleTextStyle
+    )
+}
+
+@Composable
+fun Subtitle(modifier: Modifier = Modifier, text: String) {
+    Text(
+        text = text, modifier = modifier, style = textSubtitleItemStyle
+    )
+}
+
+@Composable
+fun PriceTitle(modifier: Modifier = Modifier, price: Int) {
+    Text(
+        text = stringResource(R.string.cars_card_price_field_title, price), modifier = modifier, style = priceTitleTextStyle
     )
 }
 
