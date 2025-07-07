@@ -6,4 +6,5 @@ enum class BodyType(val type: String) {
     COUPE("coupe"),
     HATCHBACK("hatchback"),
     CABRIOLET("cabriolet"),
+    OTHER("other"),
 }

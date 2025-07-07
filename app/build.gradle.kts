@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("kotlin-kapt")
 }
 
 android {
@@ -51,4 +52,17 @@ dependencies {
     implementation(libs.androidx.material3)
     debugImplementation(libs.ui.tooling)
     implementation(libs.material3)
+
+    // hilt
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+    implementation("androidx.fragment:fragment-ktx:1.1.0")
+
+    // retrofit
+    val okhttpVersion = "4.12.0"
+    val retrofitVersion = "2.11.0"
+    implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
+    implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
+    implementation("com.squareup.retrofit2:adapter-rxjava3:$retrofitVersion")
+    implementation("com.squareup.okhttp3:okhttp:$okhttpVersion")
 }
