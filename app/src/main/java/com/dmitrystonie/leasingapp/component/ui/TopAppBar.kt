@@ -61,13 +61,13 @@ fun CarsTopAppBarWithRightIcon(
     icon: Painter,
     iconColor: Color,
     description: String,
-
+    onClick: () -> Unit,
     ) {
     TopAppBar(
         title = {
             CarsTopAppBarTitle(text)
         }, actions = {
-            IconButton({ }) {
+            IconButton(onClick = onClick) {
                 Icon(
                     painter = icon, contentDescription = description, tint = iconColor
                 )

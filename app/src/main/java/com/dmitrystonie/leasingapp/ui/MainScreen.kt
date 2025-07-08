@@ -82,7 +82,7 @@ fun MainScreen() {
 
                     CarScreen(
                         onBackClick = { navController.navigateUp() },
-                        onBookClick = { navController.navigate(LeasingBookingRoute) },
+                        onBookClick = { navController.navigate(LeasingBookingRoute(destination.carId)) },
                         carId = destination.carId
                     )
                 }
@@ -92,7 +92,7 @@ fun MainScreen() {
                     LeasingBookingScreen(
                         carId = destination.carId,
                         onBackClick = { navController.navigateUp()},
-                        onNextClick = { navController.navigate(LeasingContactsRoute)}
+                        onNextClick = { navController.navigate(LeasingContactsRoute(destination.carId))}
                     )
                 }
                 animatedComposable<LeasingConfirmationRoute> {
@@ -100,8 +100,10 @@ fun MainScreen() {
 
                     LeasingConfirmationScreen(
                         carId = destination.carId,
-                        onBackClick = {navController.openPoppingAllPrevious(CarCardRoute)},
-                        onSubmitClick = { navController.navigate(LeasingResultRoute)}
+                        onBackClick = { navController.openPoppingAllPrevious(CarCardRoute(destination.carId)) },
+                        onSubmitClick = { navController.navigate(LeasingResultRoute(destination.carId)) },
+                        onChangeBookingData = { navController.openPoppingAllPrevious(LeasingBookingRoute(destination.carId)) },
+                        onChangeContactsData = { navController.openPoppingAllPrevious(LeasingContactsRoute(destination.carId)) },
                     )
                 }
                 animatedComposable<LeasingContactsRoute> {
@@ -110,7 +112,7 @@ fun MainScreen() {
                     LeasingContactsScreen(
                         carId = destination.carId,
                         onBackClick = { navController.navigateUp()},
-                        onNextClick = { navController.navigate(LeasingConfirmationRoute)}
+                        onNextClick = { navController.navigate(LeasingConfirmationRoute(destination.carId))}
                     )
                 }
                 animatedComposable<LeasingResultRoute> {
@@ -118,8 +120,8 @@ fun MainScreen() {
 
                     LeasingResultScreen(
                         carId = destination.carId,
-                        onBackClick = {navController.openPoppingAllPrevious(CarCardRoute)},
-                        onStatusClick = { navController.navigate(LeasingOrdersRoute)},
+                        onBackClick = {navController.openPoppingAllPrevious(CarCardRoute(destination.carId))},
+                        onStatusClick = { navController.navigate(LeasingOrdersRoute(destination.carId))},
                         onMainClick = { navController.openPoppingAllPrevious(CarsRoute)}
                     )
                 }

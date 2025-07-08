@@ -1,14 +1,12 @@
-package com.dmitrystonie.leasingapp.domain.entity.rent
+package com.dmitrystonie.leasingapp.leasing.data.datasource.dto
 
 
-data class Rent(
+data class RentRequest (
     val carId: String,
-    val status: RentStatus?,
     val pickupLocation: String,
     val returnLocation: String,
     val startDate: Long,
     val endDate: Long,
-    val totalPrice: Int?,
     val firstName: String,
     val lastName: String,
     val middleName: String?,

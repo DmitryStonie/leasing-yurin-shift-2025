@@ -98,6 +98,8 @@ fun InputTextFieldWithTitle(
     placeholderText: String,
     onValueChange: (String) -> Unit,
     trailingIcon: @Composable (() -> Unit)? = null,
+    minLines: Int = 1,
+    maxLines: Int = 1,
 ) {
     Column(modifier = modifier) {
         SmallTitleThin(modifier = Modifier.padding(bottom = 6.dp), text = titleText)
@@ -107,6 +109,8 @@ fun InputTextFieldWithTitle(
             onValueChange = onValueChange,
             placeholderText = placeholderText,
             trailingIcon = trailingIcon,
+            minLines = minLines,
+            maxLines = maxLines,
         )
     }
 }

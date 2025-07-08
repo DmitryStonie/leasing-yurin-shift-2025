@@ -51,7 +51,8 @@ fun CarScreen(
 
             is CarScreenState.Content -> CarContent(
                 modifier = modifier, car = currentState.car,
-                onBackClick = onBackClick
+                onBackClick = onBackClick,
+                onBookClick = onBookClick
             )
 
             is CarScreenState.Error -> CarError(
@@ -94,6 +95,7 @@ fun CarScreenPreview() {
         CarContent(
             car = carMock,
             onBackClick = {},
+            onBookClick = {},
         )
     }
 
