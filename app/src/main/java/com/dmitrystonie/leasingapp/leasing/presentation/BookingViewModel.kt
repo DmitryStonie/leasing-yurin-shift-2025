@@ -20,7 +20,6 @@ import kotlinx.coroutines.launch
 class BookingViewModel @AssistedInject constructor(
     private val rentCarUseCase: RentCarUseCase,
     @Assisted private val carId: String,
-    @Assisted private val carName: String,
 ) : ViewModel() {
 
     private lateinit var rent: Rent
@@ -30,7 +29,7 @@ class BookingViewModel @AssistedInject constructor(
     private val _state = MutableStateFlow<BookingState>(BookingState.Initial)
     val state: StateFlow<BookingState> = _state
 
-    private val _carState = MutableStateFlow<String>(carName)
+    private val _carState = MutableStateFlow<String>("")
     val carState: StateFlow<String> = _carState
 
     private val _bookingState = MutableStateFlow<BookingData>(

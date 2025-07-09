@@ -121,7 +121,7 @@ fun MainScreen() {
                     LeasingResultScreen(
                         carId = destination.carId,
                         onBackClick = {navController.openPoppingAllPrevious(CarCardRoute(destination.carId))},
-                        onStatusClick = { navController.navigate(LeasingOrdersRoute(destination.carId))},
+                        onStatusClick = { navController.navigate(LeasingOrdersRoute)},
                         onMainClick = { navController.openPoppingAllPrevious(CarsRoute)}
                     )
                 }

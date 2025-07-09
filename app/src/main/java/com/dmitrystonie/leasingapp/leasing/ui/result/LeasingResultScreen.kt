@@ -66,53 +66,44 @@ fun TopBar(onClick: () -> Unit) {
 @Composable
 fun MainButton(onClick: () -> Unit) {
     // not completed
-//    TODO("Not yet implemented")
 }
 
 @Composable
 fun StatusButton(onClick: () -> Unit) {
     // not completed
-//    TODO("Not yet implemented")
 }
 
 @Composable
 fun MessageField() {
     // not completed
-//    TODO("Not yet implemented")
 }
 
 @Composable
 fun DatesField() {
     // not completed
-//    TODO("Not yet implemented")
 }
 
 @Composable
 fun ReturnField() {
     // not completed
-//    TODO("Not yet implemented")
 }
 
 @Composable
 fun PickupField() {
     // not completed
-//    TODO("Not yet implemented")
 }
 
 @Composable
 fun CarField() {
     // not completed
-//    TODO("Not yet implemented")
 }
 
 @Composable
 fun StatusField() {
     // not completed
-//    TODO("Not yet implemented")
 }
 
 @Composable
 fun ResultMessage() {
     // not completed
-//    TODO("Not yet implemented")
 }
