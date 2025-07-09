@@ -10,5 +10,4 @@ enum class Brand(val brandName: String) {
     GARDEN_CAR("Garden car"),
     GROCERY_CART("Grocery cart"),
     HAIER("Haier"),
-    INVALID("Invalid"),
 }

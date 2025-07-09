@@ -25,7 +25,7 @@ fun CarDto.toCar(): Car {
             Brand.GARDEN_CAR.brandName -> Brand.GARDEN_CAR
             Brand.GROCERY_CART.brandName -> Brand.GROCERY_CART
             Brand.HAIER.brandName -> Brand.HAIER
-            else -> Brand.INVALID
+            else -> throw Exception("Invalid CarDto")
         },
         media = this.media.map { mediaDto ->
             Media(
@@ -35,7 +35,7 @@ fun CarDto.toCar(): Car {
         transmission = when(this.transmission){
             Transmission.AUTOMATIC.type -> Transmission.AUTOMATIC
             Transmission.MANUAL.type -> Transmission.MANUAL
-            else -> Transmission.OTHER
+            else -> throw Exception("Invalid CarDto")
         },
         price = this.price,
         location = this.location,
@@ -47,7 +47,7 @@ fun CarDto.toCar(): Car {
             Color.BLUE.colorName -> Color.BLUE
             Color.GREY.colorName -> Color.GREY
             Color.ORANGE.colorName -> Color.ORANGE
-            else -> Color.OTHER
+            else -> throw Exception("Invalid CarDto")
         },
         bodyType = when(this.bodyType){
             BodyType.SEDAN.type -> BodyType.SEDAN
@@ -55,12 +55,12 @@ fun CarDto.toCar(): Car {
             BodyType.COUPE.type -> BodyType.COUPE
             BodyType.HATCHBACK.type -> BodyType.HATCHBACK
             BodyType.CABRIOLET.type -> BodyType.CABRIOLET
-            else -> BodyType.OTHER
+            else -> throw Exception("Invalid CarDto")
         },
         steering = when(this.steering){
             Steering.LEFT.type -> Steering.LEFT
             Steering.RIGHT.type -> Steering.RIGHT
-            else -> Steering.OTHER
+            else -> throw Exception("Invalid CarDto")
         },
         rents = if(this.rents != null) this.rents.map{rent -> Rent(rent.startDate, rent.endDate)} else listOf(),
     )
@@ -80,7 +80,7 @@ fun CarWithRentDto.toCar(): Car {
             Brand.GARDEN_CAR.brandName -> Brand.GARDEN_CAR
             Brand.GROCERY_CART.brandName -> Brand.GROCERY_CART
             Brand.HAIER.brandName -> Brand.HAIER
-            else -> Brand.INVALID
+            else -> throw Exception("Invalid CarDto")
         },
         media = this.media.map { mediaDto ->
             Media(
@@ -90,7 +90,7 @@ fun CarWithRentDto.toCar(): Car {
         transmission = when(this.transmission){
             Transmission.AUTOMATIC.type -> Transmission.AUTOMATIC
             Transmission.MANUAL.type -> Transmission.MANUAL
-            else -> Transmission.OTHER
+            else -> throw Exception("Invalid CarDto")
         },
         price = this.price,
         location = this.location,
@@ -102,7 +102,7 @@ fun CarWithRentDto.toCar(): Car {
             Color.BLUE.colorName -> Color.BLUE
             Color.GREY.colorName -> Color.GREY
             Color.ORANGE.colorName -> Color.ORANGE
-            else -> Color.OTHER
+            else -> throw Exception("Invalid CarDto")
         },
         bodyType = when(this.bodyType){
             BodyType.SEDAN.type -> BodyType.SEDAN
@@ -110,12 +110,12 @@ fun CarWithRentDto.toCar(): Car {
             BodyType.COUPE.type -> BodyType.COUPE
             BodyType.HATCHBACK.type -> BodyType.HATCHBACK
             BodyType.CABRIOLET.type -> BodyType.CABRIOLET
-            else -> BodyType.OTHER
+            else -> throw Exception("Invalid CarDto")
         },
         steering = when(this.steering){
             Steering.LEFT.type -> Steering.LEFT
             Steering.RIGHT.type -> Steering.RIGHT
-            else -> Steering.OTHER
+            else -> throw Exception("Invalid CarDto")
         },
         rents = if(this.rents != null) this.rents.map{rent -> Rent(rent.startDate, rent.endDate)} else listOf(),
     )
