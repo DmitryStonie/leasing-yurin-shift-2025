@@ -53,22 +53,23 @@ fun LeasingConfirmationScreen(
 
         Indicator(modifier = modifier.padding(top = 24.dp))
 
-        BookingCard(
-            modifier = modifier.padding(top = 24.dp),
-            onClick = onChangeBookingData,
-            carName = TODO(),
-            bookingData = TODO(),
-        )
-
-        ContactsField(
-            modifier = modifier.padding(top = 24.dp),
-            onClick = onChangeContactsData,
-            contactsData = TODO(),
-        )
-
-        PriceField(
-            modifier = modifier.padding(top = 24.dp), carPrice = TODO(), rent = TODO()
-        )
+//      not completed
+//        BookingCard(
+//            modifier = modifier.padding(top = 24.dp),
+//            onClick = onChangeBookingData,
+//            carName = "",
+//            bookingData = T,
+//        )
+//
+//        ContactsField(
+//            modifier = modifier.padding(top = 24.dp),
+//            onClick = onChangeContactsData,
+//            contactsData = TODO(),
+//        )
+//
+//        PriceField(
+//            modifier = modifier.padding(top = 24.dp), carPrice = TODO(), rent = TODO()
+//        )
 
         ConfirmButton(
             modifier = modifier, onClick = onSubmitClick
