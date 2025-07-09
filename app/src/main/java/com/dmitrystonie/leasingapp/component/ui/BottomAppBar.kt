@@ -1,6 +1,7 @@
 package com.dmitrystonie.leasingapp.component.ui
 
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -68,6 +69,7 @@ fun CarsBottomAppBar(
                 colors = NavItemColors,
                 label = {
                     Text(
+                        modifier = modifier.padding(top = 0.dp),
                         text = getIconText(option),
                         style = AppBarTextStyle,
                     )

@@ -39,11 +39,16 @@ import com.dmitrystonie.leasingapp.ui.theme.TextSecondary
 import com.dmitrystonie.leasingapp.ui.theme.TextTertiary
 
 @Composable
-fun FiltersScreen() {
+fun FiltersScreen(onBackClick: () -> Unit) {
     val modifier = Modifier.padding(start = 16.dp, end = 16.dp)
-    Column(modifier = Modifier.verticalScroll(rememberScrollState()).background(BgPrimary))
+    Column(modifier = Modifier
+        .verticalScroll(rememberScrollState())
+        .background(BgPrimary))
          {
-        TopBar(modifier = Modifier.padding(bottom = 24.dp))
+        TopBar(
+            modifier = Modifier.padding(bottom = 24.dp),
+            onBackClick = onBackClick
+        )
 
         BrandField(modifier = modifier.padding(bottom = 24.dp))
 
@@ -59,9 +64,13 @@ fun FiltersScreen() {
 
         ColorSelector(modifier = modifier.padding(bottom = 40.dp))
 
-        ResetButton(modifier = modifier.padding(bottom = 8.dp).fillMaxWidth())
+        ResetButton(modifier = modifier
+            .padding(bottom = 8.dp)
+            .fillMaxWidth())
 
-        FindButton(modifier = modifier.padding(bottom = 16.dp).fillMaxWidth())
+        FindButton(modifier = modifier
+            .padding(bottom = 16.dp)
+            .fillMaxWidth())
 
     }
 
@@ -186,18 +195,21 @@ fun BrandField(modifier: Modifier = Modifier) {
 }
 
 @Composable
-private fun TopBar(modifier: Modifier = Modifier) {
+private fun TopBar(modifier: Modifier = Modifier, onBackClick: () -> Unit) {
     CarsTopAppBarWithRightIcon(
         modifier = modifier,
         text = stringResource(R.string.cars_top_app_bar_title),
         icon = painterResource(R.drawable.cross),
         iconColor = TextPrimary,
-        description = stringResource(R.string.filters_screen_exit_description)
+        description = stringResource(R.string.filters_screen_exit_description),
+        onClick = onBackClick
     )
 }
 
 @Preview
 @Composable
 private fun FiltersScreenPreview() {
-    FiltersScreen()
+    FiltersScreen(
+        onBackClick = { }
+    )
 }

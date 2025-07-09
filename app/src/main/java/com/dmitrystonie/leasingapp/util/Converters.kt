@@ -41,3 +41,13 @@ fun Rent.toToYear(): String {
 fun Rent.daysDuration(): Int{
     return ((this.endDate - this.startDate) / (1000*60*60*24)).toFloat().toInt()
 }
+
+fun Rent.fromDate(): String{
+    val date = Date(this.startDate)
+    return SimpleDateFormat("dd.MM.yyyy", Locale.getDefault()).format(date)
+}
+
+fun Rent.toDate(): String{
+    val date = Date(this.endDate)
+    return SimpleDateFormat("dd.MM.yyyy", Locale.getDefault()).format(date)
+}

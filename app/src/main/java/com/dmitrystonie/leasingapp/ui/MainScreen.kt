@@ -27,8 +27,16 @@ import com.dmitrystonie.leasingapp.carlooking.ui.car.CarScreen
 import com.dmitrystonie.leasingapp.carlooking.ui.carlist.CarsListScreen
 import com.dmitrystonie.leasingapp.carlooking.ui.carlist.CarsRoute
 import com.dmitrystonie.leasingapp.component.ui.CarsBottomAppBar
-import com.dmitrystonie.leasingapp.leasing.ui.OrdersRoute
-import com.dmitrystonie.leasingapp.leasing.ui.OrdersScreen
+import com.dmitrystonie.leasingapp.leasing.ui.booking.LeasingBookingRoute
+import com.dmitrystonie.leasingapp.leasing.ui.booking.LeasingBookingScreen
+import com.dmitrystonie.leasingapp.leasing.ui.confirmation.LeasingConfirmationRoute
+import com.dmitrystonie.leasingapp.leasing.ui.confirmation.LeasingConfirmationScreen
+import com.dmitrystonie.leasingapp.leasing.ui.contacts.LeasingContactsRoute
+import com.dmitrystonie.leasingapp.leasing.ui.contacts.LeasingContactsScreen
+import com.dmitrystonie.leasingapp.leasing.ui.orders.LeasingOrdersRoute
+import com.dmitrystonie.leasingapp.leasing.ui.orders.OrdersScreen
+import com.dmitrystonie.leasingapp.leasing.ui.result.LeasingResultRoute
+import com.dmitrystonie.leasingapp.leasing.ui.result.LeasingResultScreen
 import com.dmitrystonie.leasingapp.ui.theme.BgPrimary
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -63,7 +71,7 @@ fun MainScreen() {
                         onFiltersClick = { navController.navigate(CarFiltersRoute) },
                     )
                 }
-                animatedComposable<OrdersRoute> {
+                animatedComposable<LeasingOrdersRoute> {
                     OrdersScreen()
                 }
                 animatedComposable<AccountRoute> {
@@ -74,7 +82,47 @@ fun MainScreen() {
 
                     CarScreen(
                         onBackClick = { navController.navigateUp() },
+                        onBookClick = { navController.navigate(LeasingBookingRoute(destination.carId)) },
                         carId = destination.carId
+                    )
+                }
+                animatedComposable<LeasingBookingRoute> {
+                    val destination = it.toRoute<LeasingBookingRoute>()
+
+                    LeasingBookingScreen(
+                        carId = destination.carId,
+                        onBackClick = { navController.navigateUp()},
+                        onNextClick = { navController.navigate(LeasingContactsRoute(destination.carId))}
+                    )
+                }
+                animatedComposable<LeasingConfirmationRoute> {
+                    val destination = it.toRoute<LeasingConfirmationRoute>()
+
+                    LeasingConfirmationScreen(
+                        carId = destination.carId,
+                        onBackClick = { navController.openPoppingAllPrevious(CarCardRoute(destination.carId)) },
+                        onSubmitClick = { navController.navigate(LeasingResultRoute(destination.carId)) },
+                        onChangeBookingData = { navController.openPoppingAllPrevious(LeasingBookingRoute(destination.carId)) },
+                        onChangeContactsData = { navController.openPoppingAllPrevious(LeasingContactsRoute(destination.carId)) },
+                    )
+                }
+                animatedComposable<LeasingContactsRoute> {
+                    val destination = it.toRoute<LeasingContactsRoute>()
+
+                    LeasingContactsScreen(
+                        carId = destination.carId,
+                        onBackClick = { navController.navigateUp()},
+                        onNextClick = { navController.navigate(LeasingConfirmationRoute(destination.carId))}
+                    )
+                }
+                animatedComposable<LeasingResultRoute> {
+                    val destination = it.toRoute<LeasingResultRoute>()
+
+                    LeasingResultScreen(
+                        carId = destination.carId,
+                        onBackClick = {navController.openPoppingAllPrevious(CarCardRoute(destination.carId))},
+                        onStatusClick = { navController.navigate(LeasingOrdersRoute)},
+                        onMainClick = { navController.openPoppingAllPrevious(CarsRoute)}
                     )
                 }
             }
@@ -85,7 +133,7 @@ fun MainScreen() {
                     when (navOption) {
 
                         NavigationOption.CARS -> navController.openPoppingAllPrevious(CarsRoute)
-                        NavigationOption.ORDERS -> navController.openPoppingAllPrevious(OrdersRoute)
+                        NavigationOption.ORDERS -> navController.openPoppingAllPrevious(LeasingOrdersRoute)
                         NavigationOption.ACCOUNT -> navController.openPoppingAllPrevious(AccountRoute)
                     }
 

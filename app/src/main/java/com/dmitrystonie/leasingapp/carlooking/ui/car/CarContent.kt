@@ -28,7 +28,7 @@ import com.dmitrystonie.leasingapp.ui.theme.TextInvert
 import com.dmitrystonie.leasingapp.ui.theme.TextSecondary
 
 @Composable
-internal fun CarContent(modifier: Modifier = Modifier, car: Car, onBackClick: () -> Unit) {
+internal fun CarContent(modifier: Modifier = Modifier, car: Car, onBackClick: () -> Unit, onBookClick: () -> Unit) {
     CarImages(
         modifier = modifier
             .fillMaxWidth()
@@ -55,14 +55,14 @@ internal fun CarContent(modifier: Modifier = Modifier, car: Car, onBackClick: ()
             .padding(bottom = 8.dp),
         onClick = onBackClick
     )
-    RentButton(modifier = modifier.fillMaxWidth())
+    RentButton(modifier = modifier.fillMaxWidth(), onClick = onBookClick)
 }
 
 @Composable
-internal fun RentButton(modifier: Modifier = Modifier) {
+internal fun RentButton(modifier: Modifier = Modifier, onClick: () -> Unit) {
     ColouredButton(
         modifier = modifier,
-        onClick = {},
+        onClick = onClick,
         buttonColors = ButtonColors(
             containerColor = BgBrand,
             contentColor = TextInvert,

@@ -26,7 +26,7 @@ import com.dmitrystonie.leasingapp.ui.theme.BgPrimary
 
 @Composable
 fun CarScreen(
-    carId: String, onBackClick: () -> Unit
+    carId: String, onBackClick: () -> Unit, onBookClick: () -> Unit
 ) {
     val viewModel: CarViewModel =
         hiltViewModel<CarViewModel, CarViewModel.CarViewModelFactory> { factory ->
@@ -51,7 +51,8 @@ fun CarScreen(
 
             is CarScreenState.Content -> CarContent(
                 modifier = modifier, car = currentState.car,
-                onBackClick = onBackClick
+                onBackClick = onBackClick,
+                onBookClick = onBookClick
             )
 
             is CarScreenState.Error -> CarError(
@@ -94,6 +95,7 @@ fun CarScreenPreview() {
         CarContent(
             car = carMock,
             onBackClick = {},
+            onBookClick = {},
         )
     }
 
