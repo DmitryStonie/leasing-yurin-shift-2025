@@ -82,20 +82,18 @@ dependencies {
     implementation(libs.androidx.runtime.livedata)
 
     // hilt
-    implementation("com.google.dagger:hilt-android:2.56.1")
-    kapt("com.google.dagger:hilt-android-compiler:2.56.1")
-    implementation("androidx.fragment:fragment-ktx:1.8.8")
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
+    implementation(libs.androidx.fragment.ktx)
 
     // retrofit
-    val okhttpVersion = "4.12.0"
-    val retrofitVersion = "2.11.0"
-    implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
-    implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
-    implementation("com.squareup.okhttp3:okhttp:$okhttpVersion")
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.okhttp)
 
     // glide
-    implementation("com.github.bumptech.glide:compose:1.0.0-beta01")
+    implementation(libs.compose)
 
     // hilt compose
-    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+    implementation(libs.androidx.hilt.navigation.compose)
 }
