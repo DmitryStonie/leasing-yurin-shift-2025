@@ -74,6 +74,7 @@ dependencies {
     implementation(project(":feature:accountedit"))
     implementation(project(":feature:auth"))
     implementation(project(":shared:account"))
+    implementation(project(":shared:car"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

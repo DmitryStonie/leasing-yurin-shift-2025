@@ -51,8 +51,6 @@
     <string name="user_icon_description">Перейти на экран профиля</string>
 
 
-    <string name="auth_user_otp_field_placeholder">Проверочный код</string>
-    <string name="auth_screen_button_text">Продолжить</string>
 
     <string name="leasing_screen_step_1_title">Бронирование авто</string>
     <string name="leasing_screen_step_2_title">Ваши данные</string>

@@ -20,6 +20,8 @@
             <option value="$PROJECT_DIR$/feature/auth" />
             <option value="$PROJECT_DIR$/shared" />
             <option value="$PROJECT_DIR$/shared/account" />
+            <option value="$PROJECT_DIR$/shared/car" />
+            <option value="$PROJECT_DIR$/shared/network" />
             <option value="$PROJECT_DIR$/util" />
             <option value="$PROJECT_DIR$/util/date" />
           </set>
