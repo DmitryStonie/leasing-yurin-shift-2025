@@ -1,7 +1,7 @@
 package com.dmitrystonie.leasingapp.carlooking.di
 
 import com.dmitrystonie.leasingapp.carlooking.data.datasource.RemoteCarsDataSource
-import com.dmitrystonie.leasingapp.network.CarsService
+import com.dmitrystonie.leasingapp.carlooking.data.datasource.CarsService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,7 +1,7 @@
 package com.dmitrystonie.leasingapp.leasing.di
 
 import com.dmitrystonie.leasingapp.leasing.data.datasource.CarRentDataSource
-import com.dmitrystonie.leasingapp.network.LeasingService
+import com.dmitrystonie.leasingapp.leasing.data.datasource.LeasingService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

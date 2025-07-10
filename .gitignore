@@ -13,6 +13,3 @@
 .externalNativeBuild
 .cxx
 local.properties
-api.properties
-/api.properties
-app/api.properties

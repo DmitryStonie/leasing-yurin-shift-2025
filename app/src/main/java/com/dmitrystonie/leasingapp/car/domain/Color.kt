@@ -8,5 +8,4 @@ enum class Color(val colorName: String) {
     BLUE("blue"),
     GREY("grey"),
     ORANGE("orange"),
-    OTHER("other")
 }

@@ -2,7 +2,6 @@ package com.dmitrystonie.leasingapp.leasing.data.datasource
 
 import com.dmitrystonie.leasingapp.domain.entity.rent.Rent
 import com.dmitrystonie.leasingapp.leasing.data.datasource.dto.RentRequest
-import com.dmitrystonie.leasingapp.network.LeasingService
 import javax.inject.Inject
 
 class CarRentDataSource @Inject constructor(private val leasingService: LeasingService) {

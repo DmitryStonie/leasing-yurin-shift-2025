@@ -12,7 +12,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.dmitrystonie.leasingapp.R
 import com.dmitrystonie.leasingapp.car.domain.Rent
-import com.dmitrystonie.leasingapp.carlooking.presentation.getCoverImageUrl
 import com.dmitrystonie.leasingapp.component.ui.BigTitle
 import com.dmitrystonie.leasingapp.component.ui.CarImage
 import com.dmitrystonie.leasingapp.component.ui.CarsTopAppBarWithLeftIcon
@@ -28,17 +27,16 @@ import com.dmitrystonie.leasingapp.ui.theme.TextInvert
 import com.dmitrystonie.leasingapp.ui.theme.TextSecondary
 
 @Composable
-internal fun CarContent(modifier: Modifier = Modifier, car: Car, onBackClick: () -> Unit, onBookClick: () -> Unit) {
+internal fun CarContent(
+    modifier: Modifier = Modifier, car: Car, onBackClick: () -> Unit, onBookClick: () -> Unit
+) {
     CarImages(
         modifier = modifier
             .fillMaxWidth()
             .padding(top = 24.dp)
             .heightIn(
-                min = 0.dp,
-                max = 220.dp
-            ),
-        url = car.getCoverImageUrl(),
-        description = car.name
+                min = 0.dp, max = 220.dp
+            ), url = car.media.find { it.isCover == true }?.url, description = car.name
     )
     CarTitle(
         modifier = modifier.padding(top = 32.dp, bottom = 16.dp), text = car.name
@@ -52,8 +50,7 @@ internal fun CarContent(modifier: Modifier = Modifier, car: Car, onBackClick: ()
     BackButton(
         modifier = modifier
             .fillMaxWidth()
-            .padding(bottom = 8.dp),
-        onClick = onBackClick
+            .padding(bottom = 8.dp), onClick = onBackClick
     )
     RentButton(modifier = modifier.fillMaxWidth(), onClick = onBookClick)
 }
@@ -94,10 +91,12 @@ internal fun Price(
     modifier: Modifier = Modifier,
     car: Car,
 ) {
+    val MILLISECONDS_IN_DAY = 86400000
+    val FOURTEEN_DAYS_STUB = 14 * MILLISECONDS_IN_DAY
     RentPrice(
         modifier = modifier, price = car.price, rent = Rent(
             startDate = System.currentTimeMillis(),
-            endDate = System.currentTimeMillis() + 14 * 1000*60*60*24
+            endDate = System.currentTimeMillis() + FOURTEEN_DAYS_STUB
         )
     )
 }
@@ -125,7 +124,7 @@ internal fun CarTitle(modifier: Modifier = Modifier, text: String) {
 }
 
 @Composable
-internal fun CarImages(modifier: Modifier = Modifier, url: String, description: String) {
+internal fun CarImages(modifier: Modifier = Modifier, url: String?, description: String) {
     CarImage(
         modifier = modifier,
         url = url,

@@ -12,5 +12,5 @@ data class CarDto(
     val color: String,
     val bodyType: String,
     val steering: String,
-    val rents: List<RentDto>
+    val rents: List<RentDto>?
 )
