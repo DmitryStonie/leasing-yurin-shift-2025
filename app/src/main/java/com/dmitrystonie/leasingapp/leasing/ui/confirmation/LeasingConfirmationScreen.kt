@@ -25,9 +25,8 @@ import com.dmitrystonie.leasingapp.ui.theme.BgBrand
 import com.dmitrystonie.leasingapp.ui.theme.BgPrimary
 import com.dmitrystonie.leasingapp.ui.theme.BorderLight
 import com.dmitrystonie.leasingapp.ui.theme.TextInvert
+import com.dmitrystonie.leasingapp.util.dateToDay
 import com.dmitrystonie.leasingapp.util.daysDuration
-import com.dmitrystonie.leasingapp.util.fromDate
-import com.dmitrystonie.leasingapp.util.toDate
 
 
 @Composable
@@ -108,7 +107,7 @@ fun ConfirmButton(modifier: Modifier = Modifier, onClick: () -> Unit) {
 @Composable
 fun PriceField(modifier: Modifier = Modifier, carPrice: Int, rent: Rent) {
     RentPrice(
-        modifier = modifier, price = carPrice * rent.daysDuration(), rent = Rent(
+        modifier = modifier, price = carPrice * daysDuration(rent.startDate, rent.endDate) , rent = Rent(
             startDate = System.currentTimeMillis(),
             endDate = System.currentTimeMillis() + 14 * 1000 * 60 * 60 * 24
         )
@@ -164,8 +163,8 @@ fun BookingCard(
                 title = stringResource(R.string.leasing_leasing_dates_headline),
                 text = stringResource(
                     R.string.leasing_leasing_dates_template,
-                    bookingData.rent!!.fromDate(),
-                    bookingData.rent.toDate()
+                    dateToDay(bookingData.rent!!.startDate),
+                    dateToDay(bookingData.rent.endDate),
                 )
             ),
             CardItemDto(
