@@ -49,14 +49,10 @@
     <string name="sliders_icon_description">Фильтры</string>
     <string name="time_icon_description">Перейти на экран заказов</string>
     <string name="user_icon_description">Перейти на экран профиля</string>
-    <string name="auth_user_message">Введите номер телефона для входа в личный кабинет</string>
-    <string name="auth_user_phone_field_placeholder">Телефон</string>
+
+
     <string name="auth_user_otp_field_placeholder">Проверочный код</string>
-    <string name="auth_screen_topbar_text">Авторизация</string>
     <string name="auth_screen_button_text">Продолжить</string>
-    <string name="auth_screen_request_code_again_info">Запросить код повторно можно через %d секунд</string>
-    <string name="auth_screen_request_code_again_action_text">Запросить код ещё раз</string>
-    <string name="auth_screen_exit_icon_description">Выйти</string>
 
     <string name="leasing_screen_step_1_title">Бронирование авто</string>
     <string name="leasing_screen_step_2_title">Ваши данные</string>

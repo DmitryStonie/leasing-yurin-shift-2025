@@ -69,6 +69,11 @@ android {
 dependencies {
     implementation(project(":component:theme"))
     implementation(project(":component:ui"))
+    implementation(project(":util:date"))
+    implementation(project(":feature:account"))
+    implementation(project(":feature:accountedit"))
+    implementation(project(":feature:auth"))
+    implementation(project(":shared:account"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

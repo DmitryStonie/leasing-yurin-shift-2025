@@ -23,3 +23,8 @@ rootProject.name = "LeasingApp"
 include(":app")
 include(":component:theme")
 include(":component:ui")
+include(":util:date")
+include(":feature:account")
+include(":feature:accountedit")
+include(":feature:auth")
+include(":shared:account")

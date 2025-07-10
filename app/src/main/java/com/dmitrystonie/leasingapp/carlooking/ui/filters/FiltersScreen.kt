@@ -200,7 +200,7 @@ private fun TopBar(modifier: Modifier = Modifier, onBackClick: () -> Unit) {
     CarsTopAppBarWithRightIcon(
         modifier = modifier,
         text = stringResource(R.string.cars_top_app_bar_title),
-        icon = painterResource(R.drawable.cross),
+        icon = painterResource(RComponent.drawable.cross),
         iconColor = TextPrimary,
         description = stringResource(R.string.filters_screen_exit_description),
         onClick = onBackClick

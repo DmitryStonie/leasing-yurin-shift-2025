@@ -27,7 +27,7 @@ import com.dmitrystonie.leasingapp.component.theme.BorderLight
 import com.dmitrystonie.leasingapp.component.theme.TextInvert
 import com.dmitrystonie.leasingapp.util.dateToDay
 import com.dmitrystonie.leasingapp.util.daysDuration
-
+import com.dmitrystonie.leasingapp.component.ui.R as RComponent
 
 @Composable
 fun LeasingConfirmationScreen(
@@ -82,7 +82,7 @@ fun LeasingConfirmationScreen(
 fun TopBar(onClick: () -> Unit) {
     CarsTopAppBarWithLeftIcon(
         text = stringResource(R.string.leasing_screen_step_3_title),
-        icon = painterResource(R.drawable.cross),
+        icon = painterResource(RComponent.drawable.cross),
         iconColor = BorderLight,
         description = stringResource(R.string.leasing_back_description),
         onClick = onClick

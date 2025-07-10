@@ -14,6 +14,7 @@ import com.dmitrystonie.leasingapp.component.ui.CarsTopAppBarWithRightIcon
 import com.dmitrystonie.leasingapp.leasing.presentation.BookingViewModel
 import com.dmitrystonie.leasingapp.component.theme.BgPrimary
 import com.dmitrystonie.leasingapp.component.theme.BorderLight
+import com.dmitrystonie.leasingapp.component.ui.R as RComponent
 
 @Composable
 fun LeasingResultScreen(
@@ -56,7 +57,7 @@ fun LeasingResultScreen(
 fun TopBar(onClick: () -> Unit) {
     CarsTopAppBarWithRightIcon(
         text = "",
-        icon = painterResource(R.drawable.cross),
+        icon = painterResource(RComponent.drawable.cross),
         iconColor = BorderLight,
         description = stringResource(R.string.leasing_back_description),
         onClick = onClick
