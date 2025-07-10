@@ -1,6 +1,7 @@
 package com.dmitrystonie.leasingapp.carlooking.data.converter
 
 import android.util.Log
+import com.dmitrystonie.leasingapp.BuildConfig
 import com.dmitrystonie.leasingapp.car.domain.Rent
 import com.dmitrystonie.leasingapp.carlooking.data.datasource.dto.CarWithRentDto
 import com.dmitrystonie.leasingapp.domain.entity.car.BodyType
@@ -84,7 +85,7 @@ private fun CarWithRentDto.convertTransmission(): Transmission {
 private fun CarWithRentDto.convertMedia(): List<Media> {
     return this.media.map { mediaDto ->
         Media(
-            url = mediaDto.url, isCover = mediaDto.isCover
+            url = "${BuildConfig.LEASING_IMAGES_BASE_URL}${mediaDto.url}", isCover = mediaDto.isCover
         )
     }
 }

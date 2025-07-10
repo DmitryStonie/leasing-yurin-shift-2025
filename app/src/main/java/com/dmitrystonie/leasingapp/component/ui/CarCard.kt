@@ -14,7 +14,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
@@ -25,7 +24,6 @@ import androidx.compose.ui.unit.sp
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.bumptech.glide.integration.compose.placeholder
-import com.dmitrystonie.leasingapp.carlooking.presentation.getCoverImageUrl
 import com.dmitrystonie.leasingapp.domain.entity.car.Car
 import com.dmitrystonie.leasingapp.ui.theme.TextPrimary
 import com.dmitrystonie.leasingapp.ui.theme.TextSecondary
@@ -74,7 +72,7 @@ fun CarSmallCard(
             .clickable(true, onClick = { onClick(car.id) })
     ) {
         GlideImage(
-            model = car.getCoverImageUrl(), contentDescription = car.name,
+            model = car.media.first{it.isCover == true}.url, contentDescription = car.name,
             modifier = Modifier
                 .border(
                     width = 0.dp, color = Transparent, shape = RoundedCornerShape(8.dp)
@@ -146,7 +144,7 @@ private fun CarSmallCardPreview() {
 
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
-fun CarImage(modifier: Modifier = Modifier, url: String, description: String) {
+fun CarImage(modifier: Modifier = Modifier, url: String?, description: String) {
     GlideImage(
         model = url, contentDescription = description,
         modifier = modifier.border(
