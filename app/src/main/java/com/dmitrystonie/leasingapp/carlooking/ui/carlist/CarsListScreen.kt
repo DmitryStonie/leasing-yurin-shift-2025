@@ -3,6 +3,8 @@ package com.dmitrystonie.leasingapp.carlooking.ui.carlist
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -24,30 +26,34 @@ fun CarsListScreen(onCarClick: (String) -> Unit, onFiltersClick: () -> Unit) {
     LaunchedEffect(Unit) {
         viewModel.loadCars()
     }
+    Column {
+        Column(
+            verticalArrangement = Arrangement.Top,
+            modifier = Modifier
+                .background(color = BgPrimary)
+                .verticalScroll(rememberScrollState())
+                .weight(weight = 1f, fill = false)
+        ) {
+            TopBar()
 
-    Column(
-        verticalArrangement = Arrangement.Top, modifier = Modifier.background(color = BgPrimary)
-    ) {
-        TopBar()
+            SearchField()
 
-        SearchField()
+            RentDateField()
 
-        RentDateField()
+            FiltersButton(onFiltersClick)
 
-        FiltersButton(onFiltersClick)
+            when (val currentState = state) {
+                CarListScreenState.Initial, CarListScreenState.Loading -> ProgressIndicator()
 
-        when (val currentState = state) {
-            CarListScreenState.Initial, CarListScreenState.Loading -> ProgressIndicator()
+                is CarListScreenState.Content -> CarsList(
+                    cars = currentState.cars, onClick = onCarClick,
+                )
 
-            is CarListScreenState.Content -> CarsList(
-                cars = currentState.cars, onClick = onCarClick
-            )
-
-            is CarListScreenState.Error -> CarError(
-                onRetry = { viewModel.loadCars() })
+                is CarListScreenState.Error -> CarError(
+                    onRetry = { viewModel.loadCars() })
+            }
         }
     }
-
 }
 
 

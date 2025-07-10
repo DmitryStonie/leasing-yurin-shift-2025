@@ -1,8 +1,8 @@
 package com.dmitrystonie.leasingapp.carlooking.ui.carlist
 
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -32,17 +32,17 @@ internal fun TopBar() {
 
 @Composable
 internal fun CarsList(cars: List<Car>, onClick: (String) -> Unit) {
-    LazyColumn(
-        modifier = Modifier.fillMaxSize(), userScrollEnabled = true,
-        contentPadding = PaddingValues(bottom = 24.dp),
-    ) {
-        items(cars) { item ->
-            CarSmallCard(
-                modifier = Modifier.padding(top = 24.dp),
-                car = item,
-                onClick = onClick)
+        LazyColumn(
+            modifier = Modifier.fillMaxWidth().height(1200.dp), userScrollEnabled = true,
+            contentPadding = PaddingValues(bottom = 24.dp),
+        ) {
+            items(cars) { item ->
+                CarSmallCard(
+                    modifier = Modifier.padding(top = 24.dp),
+                    car = item,
+                    onClick = onClick)
+            }
         }
-    }
 }
 
 @Composable
