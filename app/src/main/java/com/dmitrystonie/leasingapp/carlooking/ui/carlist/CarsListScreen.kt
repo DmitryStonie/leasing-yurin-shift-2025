@@ -15,7 +15,7 @@ import com.dmitrystonie.leasingapp.carlooking.presentation.carlist.CarListScreen
 import com.dmitrystonie.leasingapp.carlooking.presentation.carlist.CarListViewModel
 import com.dmitrystonie.leasingapp.carlooking.ui.car.CarError
 import com.dmitrystonie.leasingapp.component.ui.ProgressIndicator
-import com.dmitrystonie.leasingapp.ui.theme.BgPrimary
+import com.dmitrystonie.leasingapp.component.theme.BgPrimary
 
 
 @Composable

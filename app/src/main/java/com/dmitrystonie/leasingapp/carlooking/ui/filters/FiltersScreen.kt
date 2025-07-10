@@ -23,20 +23,21 @@ import com.dmitrystonie.leasingapp.component.ui.ColouredButton
 import com.dmitrystonie.leasingapp.component.ui.InputTextFieldWithTitle
 import com.dmitrystonie.leasingapp.component.ui.MultipleButtonWithLabel
 import com.dmitrystonie.leasingapp.component.ui.SliderSelectorWithLabels
-import com.dmitrystonie.leasingapp.ui.theme.BgBrand
-import com.dmitrystonie.leasingapp.ui.theme.BgPrimary
-import com.dmitrystonie.leasingapp.ui.theme.BorderLight
-import com.dmitrystonie.leasingapp.ui.theme.ColorBlack
-import com.dmitrystonie.leasingapp.ui.theme.ColorBlue
-import com.dmitrystonie.leasingapp.ui.theme.ColorBrown
-import com.dmitrystonie.leasingapp.ui.theme.ColorGreen
-import com.dmitrystonie.leasingapp.ui.theme.ColorRed
-import com.dmitrystonie.leasingapp.ui.theme.ColorWhite
-import com.dmitrystonie.leasingapp.ui.theme.ColorYellow
-import com.dmitrystonie.leasingapp.ui.theme.TextInvert
-import com.dmitrystonie.leasingapp.ui.theme.TextPrimary
-import com.dmitrystonie.leasingapp.ui.theme.TextSecondary
-import com.dmitrystonie.leasingapp.ui.theme.TextTertiary
+import com.dmitrystonie.leasingapp.component.theme.BgBrand
+import com.dmitrystonie.leasingapp.component.theme.BgPrimary
+import com.dmitrystonie.leasingapp.component.theme.BorderLight
+import com.dmitrystonie.leasingapp.component.theme.ColorBlack
+import com.dmitrystonie.leasingapp.component.theme.ColorBlue
+import com.dmitrystonie.leasingapp.component.theme.ColorBrown
+import com.dmitrystonie.leasingapp.component.theme.ColorGreen
+import com.dmitrystonie.leasingapp.component.theme.ColorRed
+import com.dmitrystonie.leasingapp.component.theme.ColorWhite
+import com.dmitrystonie.leasingapp.component.theme.ColorYellow
+import com.dmitrystonie.leasingapp.component.theme.TextInvert
+import com.dmitrystonie.leasingapp.component.theme.TextPrimary
+import com.dmitrystonie.leasingapp.component.theme.TextSecondary
+import com.dmitrystonie.leasingapp.component.theme.TextTertiary
+import com.dmitrystonie.leasingapp.component.ui.R as RComponent
 
 @Composable
 fun FiltersScreen(onBackClick: () -> Unit) {
@@ -110,7 +111,7 @@ fun ResetButton(modifier: Modifier = Modifier) {
 @Composable
 fun ColorSelector(modifier: Modifier = Modifier) {
     val colors = listOf(
-        Pair(painterResource(R.drawable.custom_color), "Собственный цвет"),
+        Pair(painterResource(RComponent.drawable.custom_color), "Собственный цвет"),
         Pair(ColorPainter(ColorWhite), "Белый"),
         Pair(ColorPainter(ColorBlack), "Черный"),
         Pair(ColorPainter(ColorBrown), "Коричневый"),

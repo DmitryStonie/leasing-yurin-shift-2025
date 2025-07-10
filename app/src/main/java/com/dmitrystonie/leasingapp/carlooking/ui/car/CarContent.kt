@@ -13,18 +13,18 @@ import androidx.compose.ui.unit.dp
 import com.dmitrystonie.leasingapp.R
 import com.dmitrystonie.leasingapp.car.domain.Rent
 import com.dmitrystonie.leasingapp.component.ui.BigTitle
-import com.dmitrystonie.leasingapp.component.ui.CarImage
+import com.dmitrystonie.leasingapp.carlooking.ui.CarImage
 import com.dmitrystonie.leasingapp.component.ui.CarsTopAppBarWithLeftIcon
 import com.dmitrystonie.leasingapp.component.ui.ColouredButton
 import com.dmitrystonie.leasingapp.component.ui.RentPrice
 import com.dmitrystonie.leasingapp.component.ui.Specs
 import com.dmitrystonie.leasingapp.domain.entity.car.Car
-import com.dmitrystonie.leasingapp.ui.theme.BgBrand
-import com.dmitrystonie.leasingapp.ui.theme.BgPrimary
-import com.dmitrystonie.leasingapp.ui.theme.BorderLight
-import com.dmitrystonie.leasingapp.ui.theme.IndicatorLight
-import com.dmitrystonie.leasingapp.ui.theme.TextInvert
-import com.dmitrystonie.leasingapp.ui.theme.TextSecondary
+import com.dmitrystonie.leasingapp.component.theme.BgBrand
+import com.dmitrystonie.leasingapp.component.theme.BgPrimary
+import com.dmitrystonie.leasingapp.component.theme.BorderLight
+import com.dmitrystonie.leasingapp.component.theme.IndicatorLight
+import com.dmitrystonie.leasingapp.component.theme.TextInvert
+import com.dmitrystonie.leasingapp.component.theme.TextSecondary
 
 @Composable
 internal fun CarContent(

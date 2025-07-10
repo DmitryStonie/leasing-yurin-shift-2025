@@ -14,13 +14,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dmitrystonie.leasingapp.component.ui.ColouredButtonWithIcon
 import com.dmitrystonie.leasingapp.ui.MainScreen
-import com.dmitrystonie.leasingapp.ui.theme.BgDisable
-import com.dmitrystonie.leasingapp.ui.theme.BgPrimary
-import com.dmitrystonie.leasingapp.ui.theme.BorderLight
-import com.dmitrystonie.leasingapp.ui.theme.LeasingAppTheme
-import com.dmitrystonie.leasingapp.ui.theme.TextBrandDisabled
-import com.dmitrystonie.leasingapp.ui.theme.TextSecondary
+import com.dmitrystonie.leasingapp.component.theme.BgDisable
+import com.dmitrystonie.leasingapp.component.theme.BgPrimary
+import com.dmitrystonie.leasingapp.component.theme.BorderLight
+import com.dmitrystonie.leasingapp.component.theme.LeasingAppTheme
+import com.dmitrystonie.leasingapp.component.theme.TextBrandDisabled
+import com.dmitrystonie.leasingapp.component.theme.TextSecondary
 import dagger.hilt.android.AndroidEntryPoint
+import com.dmitrystonie.leasingapp.component.ui.R
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {

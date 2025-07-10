@@ -14,14 +14,15 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.dmitrystonie.leasingapp.R
-import com.dmitrystonie.leasingapp.component.ui.CarSmallCard
+import com.dmitrystonie.leasingapp.carlooking.ui.CarSmallCard
 import com.dmitrystonie.leasingapp.component.ui.CarsTopAppBar
 import com.dmitrystonie.leasingapp.component.ui.ColouredButtonWithIcon
 import com.dmitrystonie.leasingapp.component.ui.InputTextFieldWithTitle
 import com.dmitrystonie.leasingapp.domain.entity.car.Car
-import com.dmitrystonie.leasingapp.ui.theme.IconPrimary
-import com.dmitrystonie.leasingapp.ui.theme.TextInvert
-import com.dmitrystonie.leasingapp.ui.theme.TextSecondary
+import com.dmitrystonie.leasingapp.component.theme.IconPrimary
+import com.dmitrystonie.leasingapp.component.theme.TextInvert
+import com.dmitrystonie.leasingapp.component.theme.TextSecondary
+import com.dmitrystonie.leasingapp.component.ui.R as RComponent
 
 @Composable
 internal fun TopBar() {
@@ -61,7 +62,7 @@ internal fun FiltersButton(onClick: () -> Unit) {
             disabledContentColor = TextInvert
         ),
         text = stringResource(R.string.cars_filter_button_title),
-        iconPainter = painterResource(R.drawable.sliders),
+        iconPainter = painterResource(RComponent.drawable.sliders),
         iconContentDescription = stringResource((R.string.cars_filter_button_icon_description)),
     )
 }
@@ -78,9 +79,9 @@ internal fun RentDateField() {
         onValueChange = {},
         trailingIcon = {
             Icon(
-                painter = painterResource(R.drawable.calendar),
+                painter = painterResource(RComponent.drawable.calendar),
                 tint = IconPrimary,
-                contentDescription = stringResource(R.string.leasing_edit_data_description)
+                contentDescription = stringResource(RComponent.string.leasing_edit_data_description)
             )
         },
     )

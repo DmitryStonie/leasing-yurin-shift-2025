@@ -22,7 +22,7 @@ import com.dmitrystonie.leasingapp.domain.entity.car.Color
 import com.dmitrystonie.leasingapp.domain.entity.car.Media
 import com.dmitrystonie.leasingapp.domain.entity.car.Steering
 import com.dmitrystonie.leasingapp.domain.entity.car.Transmission
-import com.dmitrystonie.leasingapp.ui.theme.BgPrimary
+import com.dmitrystonie.leasingapp.component.theme.BgPrimary
 
 @Composable
 fun CarScreen(

@@ -21,11 +21,12 @@ import com.dmitrystonie.leasingapp.component.ui.ColouredButton
 import com.dmitrystonie.leasingapp.component.ui.InputTextFieldWithTitle
 import com.dmitrystonie.leasingapp.component.ui.LineProgressIndicator
 import com.dmitrystonie.leasingapp.leasing.presentation.BookingViewModel
-import com.dmitrystonie.leasingapp.ui.theme.BgBrand
-import com.dmitrystonie.leasingapp.ui.theme.BgPrimary
-import com.dmitrystonie.leasingapp.ui.theme.BorderLight
-import com.dmitrystonie.leasingapp.ui.theme.IconPrimary
-import com.dmitrystonie.leasingapp.ui.theme.TextInvert
+import com.dmitrystonie.leasingapp.component.theme.BgBrand
+import com.dmitrystonie.leasingapp.component.theme.BgPrimary
+import com.dmitrystonie.leasingapp.component.theme.BorderLight
+import com.dmitrystonie.leasingapp.component.theme.IconPrimary
+import com.dmitrystonie.leasingapp.component.theme.TextInvert
+import com.dmitrystonie.leasingapp.component.ui.R as RComponent
 
 @Composable
 fun LeasingBookingScreen(
@@ -124,9 +125,9 @@ fun DatesField(modifier: Modifier = Modifier) {
         onValueChange = {},
         trailingIcon = {
             Icon(
-                painter = painterResource(R.drawable.calendar),
+                painter = painterResource(RComponent.drawable.calendar),
                 tint = IconPrimary,
-                contentDescription = stringResource(R.string.leasing_edit_data_description)
+                contentDescription = stringResource(RComponent.string.leasing_edit_data_description)
             )
         },
     )

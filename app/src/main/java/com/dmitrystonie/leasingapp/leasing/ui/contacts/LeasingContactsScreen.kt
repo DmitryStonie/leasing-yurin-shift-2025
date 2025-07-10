@@ -22,10 +22,10 @@ import com.dmitrystonie.leasingapp.component.ui.InputTextFieldWithTitle
 import com.dmitrystonie.leasingapp.component.ui.LineProgressIndicator
 import com.dmitrystonie.leasingapp.component.ui.UserCheckbox
 import com.dmitrystonie.leasingapp.leasing.presentation.BookingViewModel
-import com.dmitrystonie.leasingapp.ui.theme.BgBrand
-import com.dmitrystonie.leasingapp.ui.theme.BgPrimary
-import com.dmitrystonie.leasingapp.ui.theme.BorderLight
-import com.dmitrystonie.leasingapp.ui.theme.TextInvert
+import com.dmitrystonie.leasingapp.component.theme.BgBrand
+import com.dmitrystonie.leasingapp.component.theme.BgPrimary
+import com.dmitrystonie.leasingapp.component.theme.BorderLight
+import com.dmitrystonie.leasingapp.component.theme.TextInvert
 
 @Composable
 fun LeasingContactsScreen(

@@ -20,13 +20,13 @@ import com.dmitrystonie.leasingapp.component.ui.InputTextField
 import com.dmitrystonie.leasingapp.component.ui.Paragraph
 import com.dmitrystonie.leasingapp.component.ui.ParagraphSecondary
 import com.dmitrystonie.leasingapp.component.ui.TextAction
-import com.dmitrystonie.leasingapp.ui.theme.BgBrand
-import com.dmitrystonie.leasingapp.ui.theme.BgDisable
-import com.dmitrystonie.leasingapp.ui.theme.BgPrimary
-import com.dmitrystonie.leasingapp.ui.theme.IndicatorLight
-import com.dmitrystonie.leasingapp.ui.theme.TextBrandDisabled
-import com.dmitrystonie.leasingapp.ui.theme.TextInvert
-import com.dmitrystonie.leasingapp.ui.theme.TextPrimary
+import com.dmitrystonie.leasingapp.component.theme.BgBrand
+import com.dmitrystonie.leasingapp.component.theme.BgDisable
+import com.dmitrystonie.leasingapp.component.theme.BgPrimary
+import com.dmitrystonie.leasingapp.component.theme.IndicatorLight
+import com.dmitrystonie.leasingapp.component.theme.TextBrandDisabled
+import com.dmitrystonie.leasingapp.component.theme.TextInvert
+import com.dmitrystonie.leasingapp.component.theme.TextPrimary
 
 @Composable
 fun AuthCodeScreen() {

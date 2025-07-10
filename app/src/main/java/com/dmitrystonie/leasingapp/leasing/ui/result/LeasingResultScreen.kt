@@ -12,8 +12,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.dmitrystonie.leasingapp.R
 import com.dmitrystonie.leasingapp.component.ui.CarsTopAppBarWithRightIcon
 import com.dmitrystonie.leasingapp.leasing.presentation.BookingViewModel
-import com.dmitrystonie.leasingapp.ui.theme.BgPrimary
-import com.dmitrystonie.leasingapp.ui.theme.BorderLight
+import com.dmitrystonie.leasingapp.component.theme.BgPrimary
+import com.dmitrystonie.leasingapp.component.theme.BorderLight
 
 @Composable
 fun LeasingResultScreen(

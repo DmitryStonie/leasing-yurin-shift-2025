@@ -24,7 +24,6 @@
     <string name="cars_filter_price_slider_headline">Стоимость</string>
     <string name="cars_filter_price_slider_from">%d ₽</string>
     <string name="cars_filter_price_slider_to">до %d ₽</string>
-    <string name="cars_filter_color_selector_headline">Цвет</string>
     <string name="cars_filter_reset_button_title">Сбросить все фильтры</string>
     <string name="cars_filter_find_button_title">Найти</string>
     <string name="cars_card_characteristics_title">Характеристики</string>
@@ -33,7 +32,6 @@
     <string name="cars_card_body_type_title">Тип кузова</string>
     <string name="cars_card_color_title">Цвет</string>
     <string name="cars_card_price_title">Стоимость</string>
-    <string name="cars_card_price_field_title">Итого: %d ₽</string>
     <string name="cars_card_price_dates_title">Aренда: %s - %s %s %s (%s дней)</string>
     <string name="cars_card_rent_title">Аренда</string>
     <string name="cars_card_back_button_title">Назад</string>
@@ -99,7 +97,6 @@
     <string name="leasing_sms_info_text">Вся информация была продублирована в SMS</string>
     <string name="leasing_check_status_button_text">Посмотреть статус</string>
     <string name="leasing_to_main_page_button_text">На главную</string>
-    <string name="leasing_edit_data_description">Изменить данные</string>
     <string name="leasing_back_description">Назад</string>
     <string name="leasing_name_template">%s %s %s</string>
 
@@ -139,7 +136,6 @@
     <string name="indicator_active_description">Активна</string>
     <string name="indicator_canceled_description">Отменена</string>
 
-    <string name="filters_money_slider_description">Укажите стоимость аренды</string>
     <string name="filters_screen_exit_description">Закрыть фильтры</string>
     <string name="filters_select_brand_description">Выбрать марку</string>
     <string name="filters_select_body_type_description">Выбрать тип кузова</string>
