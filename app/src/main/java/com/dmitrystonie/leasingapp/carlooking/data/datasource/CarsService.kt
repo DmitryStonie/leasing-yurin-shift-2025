@@ -1,15 +1,14 @@
-package com.dmitrystonie.leasingapp.network
+package com.dmitrystonie.leasingapp.carlooking.data.datasource
 
 import com.dmitrystonie.leasingapp.carlooking.data.datasource.dto.CarPaginatedResponse
 import com.dmitrystonie.leasingapp.carlooking.data.datasource.dto.CarResponse
-import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface CarsService {
     @GET("/api/cars/info/{id}")
-    suspend fun getCar(@Path("id") carId: String): Response<CarResponse>
+    suspend fun getCar(@Path("id") carId: String): CarResponse
 
     @GET("/api/cars/info")
     suspend fun getCars(
@@ -22,5 +21,5 @@ interface CarsService {
         @Query("color") color: String?,
         @Query("limit") limit: Int?,
         @Query("page") page: Int?,
-    ): Response<CarPaginatedResponse>
+    ): CarPaginatedResponse
 }

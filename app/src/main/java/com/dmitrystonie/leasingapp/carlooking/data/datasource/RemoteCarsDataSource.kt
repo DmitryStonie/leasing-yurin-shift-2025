@@ -1,6 +1,5 @@
 package com.dmitrystonie.leasingapp.carlooking.data.datasource
 
-import com.dmitrystonie.leasingapp.network.CarsService
 import com.dmitrystonie.leasingapp.carlooking.domain.entity.SearchParameters
 import javax.inject.Inject
 

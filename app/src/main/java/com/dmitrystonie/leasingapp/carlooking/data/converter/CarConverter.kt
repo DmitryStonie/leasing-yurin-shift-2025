@@ -1,5 +1,6 @@
 package com.dmitrystonie.leasingapp.carlooking.data.converter
 
+import android.util.Log
 import com.dmitrystonie.leasingapp.car.domain.Rent
 import com.dmitrystonie.leasingapp.carlooking.data.datasource.dto.CarDto
 import com.dmitrystonie.leasingapp.domain.entity.car.BodyType
@@ -10,20 +11,25 @@ import com.dmitrystonie.leasingapp.domain.entity.car.Media
 import com.dmitrystonie.leasingapp.domain.entity.car.Steering
 import com.dmitrystonie.leasingapp.domain.entity.car.Transmission
 
-fun CarDto.toCar(): Car {
-    return Car(
-        id = this.id,
-        name = this.name,
-        brand = convertBrand(),
-        media = convertMedia(),
-        transmission = convertTransmission(),
-        price = this.price,
-        location = this.location,
-        color = convertColor(),
-        bodyType = convertBodyColor(),
-        steering = convertSteering(),
-        rents = convertRents(),
-    )
+fun CarDto.toCar(): Car? {
+    try{
+        return Car(
+            id = this.id,
+            name = this.name,
+            brand = convertBrand(),
+            media = convertMedia(),
+            transmission = convertTransmission(),
+            price = this.price,
+            location = this.location,
+            color = convertColor(),
+            bodyType = convertBodyType(),
+            steering = convertSteering(),
+            rents = convertRents(),
+        )
+    } catch (e: Exception){
+        Log.d("ERROR", "Got exception ${e.message}")
+        return null
+    }
 }
 
 private fun CarDto.convertRents(): List<Rent> {
@@ -42,7 +48,7 @@ private fun CarDto.convertSteering(): Steering {
     }
 }
 
-private fun CarDto.convertBodyColor(): BodyType {
+private fun CarDto.convertBodyType(): BodyType {
     return when (this.bodyType) {
         BodyType.SEDAN.type -> BodyType.SEDAN
         BodyType.SUV.type -> BodyType.SUV
