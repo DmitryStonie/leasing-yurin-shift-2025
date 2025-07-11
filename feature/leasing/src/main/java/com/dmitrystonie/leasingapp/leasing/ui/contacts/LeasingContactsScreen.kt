@@ -191,7 +191,7 @@ fun FirstNameField(modifier: Modifier = Modifier) {
         modifier = modifier,
         titleText = stringResource(R.string.leasing_firstname_headline),
         fieldText = "",
-        placeholderText = stringResource(R.string.leasing_lastname_placeholder),
+        placeholderText = stringResource(R.string.leasing_firstname_placeholder),
         onValueChange = {},
     )
 }
