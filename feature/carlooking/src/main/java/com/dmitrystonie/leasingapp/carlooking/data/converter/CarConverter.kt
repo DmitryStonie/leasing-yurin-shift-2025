@@ -1,9 +1,8 @@
 package com.dmitrystonie.leasingapp.carlooking.data.converter
 
 import android.util.Log
-import com.dmitrystonie.leasingapp.BuildConfig
 import com.dmitrystonie.leasingapp.car.domain.Rent
-import com.dmitrystonie.leasingapp.carlooking.data.datasource.dto.CarWithRentDto
+import com.dmitrystonie.leasingapp.carlooking.data.datasource.dto.CarDto
 import com.dmitrystonie.leasingapp.domain.entity.car.BodyType
 import com.dmitrystonie.leasingapp.domain.entity.car.Brand
 import com.dmitrystonie.leasingapp.domain.entity.car.Car
@@ -11,9 +10,10 @@ import com.dmitrystonie.leasingapp.domain.entity.car.Color
 import com.dmitrystonie.leasingapp.domain.entity.car.Media
 import com.dmitrystonie.leasingapp.domain.entity.car.Steering
 import com.dmitrystonie.leasingapp.domain.entity.car.Transmission
+import com.dmitrystonie.leasingapp.shared.api.BuildConfig
 
-fun CarWithRentDto.toCar(): Car? {
-    try {
+fun CarDto.toCar(): Car? {
+    try{
         return Car(
             id = this.id,
             name = this.name,
@@ -27,22 +27,21 @@ fun CarWithRentDto.toCar(): Car? {
             steering = convertSteering(),
             rents = convertRents(),
         )
-    } catch(e : Exception){
+    } catch (e: Exception){
         Log.d("ERROR", "Got exception ${e.message}")
         return null
     }
 }
 
-private fun CarWithRentDto.convertRents(): List<Rent> {
+private fun CarDto.convertRents(): List<Rent> {
     return if (this.rents != null) this.rents.map { rent ->
         Rent(
-            rent.startDate,
-            rent.endDate
+            rent.startDate, rent.endDate
         )
     } else listOf()
 }
 
-private fun CarWithRentDto.convertSteering(): Steering {
+private fun CarDto.convertSteering(): Steering {
     return when (this.steering) {
         Steering.LEFT.type -> Steering.LEFT
         Steering.RIGHT.type -> Steering.RIGHT
@@ -50,7 +49,7 @@ private fun CarWithRentDto.convertSteering(): Steering {
     }
 }
 
-private fun CarWithRentDto.convertBodyType(): BodyType {
+private fun CarDto.convertBodyType(): BodyType {
     return when (this.bodyType) {
         BodyType.SEDAN.type -> BodyType.SEDAN
         BodyType.SUV.type -> BodyType.SUV
@@ -61,7 +60,7 @@ private fun CarWithRentDto.convertBodyType(): BodyType {
     }
 }
 
-private fun CarWithRentDto.convertColor(): Color {
+private fun CarDto.convertColor(): Color {
     return when (this.color) {
         Color.RED.colorName -> Color.RED
         Color.BLACK.colorName -> Color.BLACK
@@ -74,7 +73,7 @@ private fun CarWithRentDto.convertColor(): Color {
     }
 }
 
-private fun CarWithRentDto.convertTransmission(): Transmission {
+private fun CarDto.convertTransmission(): Transmission {
     return when (this.transmission) {
         Transmission.AUTOMATIC.type -> Transmission.AUTOMATIC
         Transmission.MANUAL.type -> Transmission.MANUAL
@@ -82,7 +81,7 @@ private fun CarWithRentDto.convertTransmission(): Transmission {
     }
 }
 
-private fun CarWithRentDto.convertMedia(): List<Media> {
+private fun CarDto.convertMedia(): List<Media> {
     return this.media.map { mediaDto ->
         Media(
             url = "${BuildConfig.LEASING_IMAGES_BASE_URL}${mediaDto.url}", isCover = mediaDto.isCover
@@ -90,7 +89,7 @@ private fun CarWithRentDto.convertMedia(): List<Media> {
     }
 }
 
-private fun CarWithRentDto.convertBrand(): Brand {
+private fun CarDto.convertBrand(): Brand {
     return when (this.brand) {
         Brand.HAVAL.brandName -> Brand.HAVAL
         Brand.HYUNDAI.brandName -> Brand.HYUNDAI

@@ -71,7 +71,7 @@ fun TopBar(modifier: Modifier = Modifier, onClick: () -> Unit) {
     CarsTopAppBarWithLeftIcon(
         modifier = modifier,
         text = stringResource(R.string.leasing_screen_step_1_title),
-        icon = painterResource(R.drawable.ic_left),
+        icon = painterResource(RComponent.drawable.ic_left),
         iconColor = BorderLight,
         description = stringResource(R.string.leasing_back_description),
         onClick = onClick

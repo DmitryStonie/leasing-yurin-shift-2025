@@ -18,10 +18,12 @@
             <option value="$PROJECT_DIR$/feature/account" />
             <option value="$PROJECT_DIR$/feature/accountedit" />
             <option value="$PROJECT_DIR$/feature/auth" />
+            <option value="$PROJECT_DIR$/feature/carlooking" />
+            <option value="$PROJECT_DIR$/feature/leasing" />
             <option value="$PROJECT_DIR$/shared" />
             <option value="$PROJECT_DIR$/shared/account" />
+            <option value="$PROJECT_DIR$/shared/api" />
             <option value="$PROJECT_DIR$/shared/car" />
-            <option value="$PROJECT_DIR$/shared/network" />
             <option value="$PROJECT_DIR$/util" />
             <option value="$PROJECT_DIR$/util/date" />
           </set>

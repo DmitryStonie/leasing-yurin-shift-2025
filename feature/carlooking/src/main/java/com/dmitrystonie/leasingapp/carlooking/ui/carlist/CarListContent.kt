@@ -13,7 +13,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.dmitrystonie.leasingapp.R
 import com.dmitrystonie.leasingapp.carlooking.ui.CarSmallCard
 import com.dmitrystonie.leasingapp.component.ui.CarsTopAppBar
 import com.dmitrystonie.leasingapp.component.ui.ColouredButtonWithIcon
@@ -22,6 +21,7 @@ import com.dmitrystonie.leasingapp.domain.entity.car.Car
 import com.dmitrystonie.leasingapp.component.theme.IconPrimary
 import com.dmitrystonie.leasingapp.component.theme.TextInvert
 import com.dmitrystonie.leasingapp.component.theme.TextSecondary
+import com.dmitrystonie.leasingapp.feature.carlooking.R
 import com.dmitrystonie.leasingapp.component.ui.R as RComponent
 
 @Composable

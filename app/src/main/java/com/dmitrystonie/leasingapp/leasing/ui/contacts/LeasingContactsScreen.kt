@@ -26,6 +26,7 @@ import com.dmitrystonie.leasingapp.component.theme.BgBrand
 import com.dmitrystonie.leasingapp.component.theme.BgPrimary
 import com.dmitrystonie.leasingapp.component.theme.BorderLight
 import com.dmitrystonie.leasingapp.component.theme.TextInvert
+import com.dmitrystonie.leasingapp.component.ui.R as RComponent
 
 @Composable
 fun LeasingContactsScreen(
@@ -99,7 +100,7 @@ fun LeasingContactsScreen(
 fun TopBar(onClick: () -> Unit) {
     CarsTopAppBarWithLeftIcon(
         text = stringResource(R.string.leasing_screen_step_2_title),
-        icon = painterResource(R.drawable.ic_left),
+        icon = painterResource(RComponent.drawable.ic_left),
         iconColor = BorderLight,
         description = stringResource(R.string.leasing_back_description),
         onClick = onClick

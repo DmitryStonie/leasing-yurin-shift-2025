@@ -29,7 +29,6 @@ import com.dmitrystonie.leasingapp.component.theme.TextPrimary
 import com.dmitrystonie.leasingapp.component.theme.TextSecondary
 import com.dmitrystonie.leasingapp.component.theme.Transparent
 import com.dmitrystonie.leasingapp.component.theme.appFontFamily
-import com.dmitrystonie.leasingapp.R
 import com.dmitrystonie.leasingapp.car.domain.Rent
 import com.dmitrystonie.leasingapp.domain.entity.car.BodyType
 import com.dmitrystonie.leasingapp.domain.entity.car.Brand
@@ -37,6 +36,7 @@ import com.dmitrystonie.leasingapp.domain.entity.car.Color
 import com.dmitrystonie.leasingapp.domain.entity.car.Media
 import com.dmitrystonie.leasingapp.domain.entity.car.Steering
 import com.dmitrystonie.leasingapp.domain.entity.car.Transmission
+import com.dmitrystonie.leasingapp.feature.carlooking.R
 
 val titleItemStyle = TextStyle(
     color = TextPrimary,

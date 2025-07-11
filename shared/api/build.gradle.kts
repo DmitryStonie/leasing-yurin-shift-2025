@@ -1,3 +1,4 @@
+import java.util.Properties
 
 plugins {
     alias(libs.plugins.android.library)
@@ -6,14 +7,36 @@ plugins {
     id("kotlinx-serialization")
 }
 
+fun getLeasingBaseUrl(): String {
+    val properties = Properties()
+    val stream = project.file("api.properties").inputStream()
+    properties.load(stream)
+    stream.close()
+    return properties.getProperty("LEASING_API_BASE_URL", "")
+}
+
+fun getLeasingImagesBaseUrl(): String {
+    val properties = Properties()
+    val stream = project.file("api.properties").inputStream()
+    properties.load(stream)
+    stream.close()
+    return properties.getProperty("LEASING_IMAGES_BASE_URL", "")
+}
+
 android {
-    namespace = "com.dmitrystonie.leasingapp.feature.account"
+    namespace = "com.dmitrystonie.leasingapp.shared.api"
     compileSdk = 35
 
     defaultConfig {
         minSdk = 24
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        val leasingBaseUrl = getLeasingBaseUrl()
+        val leasingImagesBaseUrl = getLeasingImagesBaseUrl()
+
+        buildConfigField("String", "LEASING_API_BASE_URL", "\"${leasingBaseUrl}\"")
+        buildConfigField("String", "LEASING_IMAGES_BASE_URL", "\"${leasingImagesBaseUrl}\"")
     }
 
     compileOptions {
@@ -22,6 +45,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = "11"
+    }
+    buildFeatures {
+        buildConfig = true
     }
 
 }

@@ -16,7 +16,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.dmitrystonie.leasingapp.R
 import com.dmitrystonie.leasingapp.component.ui.CarsTopAppBarWithRightIcon
 import com.dmitrystonie.leasingapp.component.ui.ColorSelector
 import com.dmitrystonie.leasingapp.component.ui.ColouredButton
@@ -37,6 +36,7 @@ import com.dmitrystonie.leasingapp.component.theme.TextInvert
 import com.dmitrystonie.leasingapp.component.theme.TextPrimary
 import com.dmitrystonie.leasingapp.component.theme.TextSecondary
 import com.dmitrystonie.leasingapp.component.theme.TextTertiary
+import com.dmitrystonie.leasingapp.feature.carlooking.R
 import com.dmitrystonie.leasingapp.component.ui.R as RComponent
 
 @Composable

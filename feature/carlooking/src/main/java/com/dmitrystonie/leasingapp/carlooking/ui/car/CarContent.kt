@@ -10,7 +10,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.dmitrystonie.leasingapp.R
 import com.dmitrystonie.leasingapp.car.domain.Rent
 import com.dmitrystonie.leasingapp.component.ui.BigTitle
 import com.dmitrystonie.leasingapp.carlooking.ui.CarImage
@@ -25,6 +24,8 @@ import com.dmitrystonie.leasingapp.component.theme.BorderLight
 import com.dmitrystonie.leasingapp.component.theme.IndicatorLight
 import com.dmitrystonie.leasingapp.component.theme.TextInvert
 import com.dmitrystonie.leasingapp.component.theme.TextSecondary
+import com.dmitrystonie.leasingapp.feature.carlooking.R
+import com.dmitrystonie.leasingapp.component.ui.R as RComponent
 
 @Composable
 internal fun CarContent(
@@ -136,7 +137,7 @@ internal fun CarImages(modifier: Modifier = Modifier, url: String?, description:
 internal fun TopBar(onBackClick: () -> Unit) {
     CarsTopAppBarWithLeftIcon(
         text = stringResource(R.string.cars_top_app_bar_title),
-        icon = painterResource(R.drawable.ic_left),
+        icon = painterResource(RComponent.drawable.ic_left),
         iconColor = IndicatorLight,
         description = stringResource(R.string.ic_left_icon_description),
         onClick = onBackClick

@@ -1,6 +1,5 @@
 package com.dmitrystonie.leasingapp.network
 
-import com.dmitrystonie.leasingapp.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -8,6 +7,7 @@ import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
+import com.dmitrystonie.leasingapp.shared.api.BuildConfig
 
 
 @Module

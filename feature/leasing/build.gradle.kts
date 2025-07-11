@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.dmitrystonie.leasingapp.feature.account"
+    namespace = "com.dmitrystonie.leasingapp.feature.leasing"
     compileSdk = 35
 
     defaultConfig {
@@ -23,7 +23,6 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-
 }
 
 dependencies {

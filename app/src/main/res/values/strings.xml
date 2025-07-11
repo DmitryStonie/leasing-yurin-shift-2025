@@ -1,51 +1,14 @@
 <resources>
     <string name="app_name">LeasingApp</string>
-    <string name="cars_top_app_bar_title">Автомобили</string>
-    <string name="cars_search_field_headline">Поиск</string>
-    <string name="cars_search_field_hint">Поиск</string>
-    <string name="cars_rent_date_field_headline">Даты аренды</string>
-    <string name="cars_rent_date_field_hint">Выберите дату</string>
-    <string name="cars_filter_button_title">Фильтры</string>
     <string name="bottom_app_bar_cars_title">Авто</string>
     <string name="bottom_app_bar_orders_title">Заказы</string>
     <string name="bottom_app_bar_profile_title">Профиль</string>
-    <string name="cars_filter_brand_field_headline">Марка</string>
-    <string name="cars_filter_brand_field_hint">Выберите марку</string>
-    <string name="cars_filter_body_type_field_headline">Тип кузова</string>
-    <string name="cars_filter_body_type_field_hint">Выберите тип кузова</string>
-    <string name="cars_filter_steering_selector_headline">Руль</string>
-    <string name="cars_filter_steering_any_title">Любой</string>
-    <string name="cars_filter_steering_left_title">Левый</string>
-    <string name="cars_filter_steering_right_title">Правый</string>
-    <string name="cars_filter_transmission_selector_headline">Коробка передач</string>
-    <string name="cars_filter_transmission_any_title">Любая</string>
-    <string name="cars_filter_transmission_automatic_title">Автомат</string>
-    <string name="cars_filter_transmission_mechanic_title">Механика</string>
-    <string name="cars_filter_price_slider_headline">Стоимость</string>
-    <string name="cars_filter_price_slider_from">%d ₽</string>
-    <string name="cars_filter_price_slider_to">до %d ₽</string>
-    <string name="cars_filter_reset_button_title">Сбросить все фильтры</string>
-    <string name="cars_filter_find_button_title">Найти</string>
-    <string name="cars_card_characteristics_title">Характеристики</string>
-    <string name="cars_card_transmission_title">Коробка передач</string>
-    <string name="cars_card_steering_title">Сторона руля</string>
-    <string name="cars_card_body_type_title">Тип кузова</string>
-    <string name="cars_card_color_title">Цвет</string>
-    <string name="cars_card_price_title">Стоимость</string>
-    <string name="cars_card_price_dates_title">Aренда: %s - %s %s %s (%s дней)</string>
-    <string name="cars_card_rent_title">Аренда</string>
-    <string name="cars_card_back_button_title">Назад</string>
-    <string name="cars_card_rent_button_title">Забронировать</string>
-    <string name="cars_rent_date_icon_description">Укажите дату</string>
-    <string name="cars_filter_button_icon_description">Выбрать фильтры</string>
-    <string name="cars_card_price_offer_text">%s ₽ за %s дней</string>
-    <string name="cars_card_price_text">%s ₽</string>
+
 
     <string name="arrow_2_icon_description">Укажите стоимость</string>
     <string name="calendar_icon_description">Укажите дату аренды</string>
     <string name="car_icon_description">Перейти на экран автомобилей</string>
     <string name="cross_icon_description">Закрыть фильтры</string>
-    <string name="ic_left_icon_description">Назад</string>
     <string name="sliders_icon_description">Фильтры</string>
     <string name="time_icon_description">Перейти на экран заказов</string>
     <string name="user_icon_description">Перейти на экран профиля</string>
@@ -129,16 +92,4 @@
     <string name="indicator_created_description">Создана</string>
     <string name="indicator_active_description">Активна</string>
     <string name="indicator_canceled_description">Отменена</string>
-
-    <string name="filters_screen_exit_description">Закрыть фильтры</string>
-    <string name="filters_select_brand_description">Выбрать марку</string>
-    <string name="filters_select_body_type_description">Выбрать тип кузова</string>
-
-
-    <string name="loading_error_title">Ошибка</string>
-    <string name="loading_error_text">Произошла ошибка при загрузке данных</string>
-    <string name="loading_error_button_text">Повторить</string>
-
-
-
 </resources>
