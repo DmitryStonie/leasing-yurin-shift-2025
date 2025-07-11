@@ -21,4 +21,15 @@ dependencyResolutionManagement {
 
 rootProject.name = "LeasingApp"
 include(":app")
- 
+include(":component:theme")
+include(":component:ui")
+include(":util:date")
+include(":feature:account")
+include(":feature:accountedit")
+include(":feature:auth")
+include(":feature:carlooking")
+include(":feature:leasing")
+include(":shared:account")
+include(":shared:car")
+include(":shared:api")
+include(":shared:rent")

@@ -1,108 +1,17 @@
 <resources>
     <string name="app_name">LeasingApp</string>
-    <string name="cars_top_app_bar_title">Автомобили</string>
-    <string name="cars_search_field_headline">Поиск</string>
-    <string name="cars_search_field_hint">Поиск</string>
-    <string name="cars_rent_date_field_headline">Даты аренды</string>
-    <string name="cars_rent_date_field_hint">Выберите дату</string>
-    <string name="cars_filter_button_title">Фильтры</string>
     <string name="bottom_app_bar_cars_title">Авто</string>
     <string name="bottom_app_bar_orders_title">Заказы</string>
     <string name="bottom_app_bar_profile_title">Профиль</string>
-    <string name="cars_filter_brand_field_headline">Марка</string>
-    <string name="cars_filter_brand_field_hint">Выберите марку</string>
-    <string name="cars_filter_body_type_field_headline">Тип кузова</string>
-    <string name="cars_filter_body_type_field_hint">Выберите тип кузова</string>
-    <string name="cars_filter_steering_selector_headline">Руль</string>
-    <string name="cars_filter_steering_any_title">Любой</string>
-    <string name="cars_filter_steering_left_title">Левый</string>
-    <string name="cars_filter_steering_right_title">Правый</string>
-    <string name="cars_filter_transmission_selector_headline">Коробка передач</string>
-    <string name="cars_filter_transmission_any_title">Любая</string>
-    <string name="cars_filter_transmission_automatic_title">Автомат</string>
-    <string name="cars_filter_transmission_mechanic_title">Механика</string>
-    <string name="cars_filter_price_slider_headline">Стоимость</string>
-    <string name="cars_filter_price_slider_from">%d ₽</string>
-    <string name="cars_filter_price_slider_to">до %d ₽</string>
-    <string name="cars_filter_color_selector_headline">Цвет</string>
-    <string name="cars_filter_reset_button_title">Сбросить все фильтры</string>
-    <string name="cars_filter_find_button_title">Найти</string>
-    <string name="cars_card_characteristics_title">Характеристики</string>
-    <string name="cars_card_transmission_title">Коробка передач</string>
-    <string name="cars_card_steering_title">Сторона руля</string>
-    <string name="cars_card_body_type_title">Тип кузова</string>
-    <string name="cars_card_color_title">Цвет</string>
-    <string name="cars_card_price_title">Стоимость</string>
-    <string name="cars_card_price_field_title">Итого: %d ₽</string>
-    <string name="cars_card_price_dates_title">Aренда: %s - %s %s %s (%s дней)</string>
-    <string name="cars_card_rent_title">Аренда</string>
-    <string name="cars_card_back_button_title">Назад</string>
-    <string name="cars_card_rent_button_title">Забронировать</string>
-    <string name="cars_rent_date_icon_description">Укажите дату</string>
-    <string name="cars_filter_button_icon_description">Выбрать фильтры</string>
-    <string name="cars_card_price_offer_text">%s ₽ за %s дней</string>
-    <string name="cars_card_price_text">%s ₽</string>
+
 
     <string name="arrow_2_icon_description">Укажите стоимость</string>
     <string name="calendar_icon_description">Укажите дату аренды</string>
     <string name="car_icon_description">Перейти на экран автомобилей</string>
     <string name="cross_icon_description">Закрыть фильтры</string>
-    <string name="ic_left_icon_description">Назад</string>
     <string name="sliders_icon_description">Фильтры</string>
     <string name="time_icon_description">Перейти на экран заказов</string>
     <string name="user_icon_description">Перейти на экран профиля</string>
-    <string name="auth_user_message">Введите номер телефона для входа в личный кабинет</string>
-    <string name="auth_user_phone_field_placeholder">Телефон</string>
-    <string name="auth_user_otp_field_placeholder">Проверочный код</string>
-    <string name="auth_screen_topbar_text">Авторизация</string>
-    <string name="auth_screen_button_text">Продолжить</string>
-    <string name="auth_screen_request_code_again_info">Запросить код повторно можно через %d секунд</string>
-    <string name="auth_screen_request_code_again_action_text">Запросить код ещё раз</string>
-    <string name="auth_screen_exit_icon_description">Выйти</string>
-
-    <string name="leasing_screen_step_1_title">Бронирование авто</string>
-    <string name="leasing_screen_step_2_title">Ваши данные</string>
-    <string name="leasing_screen_step_3_title">Проверка данных</string>
-    <string name="leasing_step_text">Шаг %d из %d</string>
-    <string name="leasing_date_headline">Даты аренды</string>
-    <string name="leasing_date_placeholder">Дата аренды</string>
-    <string name="leasing_place_of_receipt_headline">Место получения</string>
-    <string name="leasing_place_of_receipt_placeholder">Место получения</string>
-    <string name="leasing_place_of_return_headline">Место возврата</string>
-    <string name="leasing_place_of_return_placeholder">Место возврата</string>
-    <string name="leasing_continue_button_text">Продолжить</string>
-    <string name="leasing_lastname_headline">Фамилия</string>
-    <string name="leasing_lastname_placeholder">Фамилия</string>
-    <string name="leasing_firstname_headline">Имя</string>
-    <string name="leasing_firstname_placeholder">Имя</string>
-    <string name="leasing_middlename_headline">Отчество</string>
-    <string name="leasing_middlename_placeholder">Отчество</string>
-    <string name="leasing_birthdate_headline">Дата рождения</string>
-    <string name="leasing_birthdate_placeholder">__.__.____</string>
-    <string name="leasing_phone_number_headline">Номер телефона</string>
-    <string name="leasing_phone_number_placeholder">Номер телефона</string>
-    <string name="leasing_email_headline">"Электронная почта</string>
-    <string name="leasing_email_placeholder">Электронная почта</string>
-    <string name="leasing_comment_headline">Комментарий</string>
-    <string name="leasing_comment_placeholder">Введите дополнительную информацию</string>
-    <string name="leasing_agreement_accept_text">Принимаю условия соглашения</string>
-    <string name="leasing_leasing_info_text">Данные брони</string>
-    <string name="leasing_leasing_contacts_text">Данные заказчика</string>
-    <string name="leasing_car_headline">Автомобиль</string>
-    <string name="leasing_leasing_dates_headline">Даты брони</string>
-    <string name="leasing_leasing_dates_template">%s - %s</string>
-    <string name="leasing_full_name_headline">ФИО</string>
-    <string name="leasing_date_interval">Аренда: $1%d - $2%d $3%s ($4%d дней)</string>
-    <string name="leasing_draw_up_button_text">Оформить</string>
-    <string name="leasing_success_message_text">Автомобиль забронирован</string>
-    <string name="leasing_status_headline">Статус</string>
-    <string name="leasing_sms_info_text">Вся информация была продублирована в SMS</string>
-    <string name="leasing_check_status_button_text">Посмотреть статус</string>
-    <string name="leasing_to_main_page_button_text">На главную</string>
-    <string name="leasing_edit_data_description">Изменить данные</string>
-    <string name="leasing_back_description">Назад</string>
-    <string name="leasing_name_template">%s %s %s</string>
-
 
     <string name="profile_screen_title">Профиль</string>
     <string name="profile_firstname_headline">Имя*</string>
@@ -138,17 +47,4 @@
     <string name="indicator_created_description">Создана</string>
     <string name="indicator_active_description">Активна</string>
     <string name="indicator_canceled_description">Отменена</string>
-
-    <string name="filters_money_slider_description">Укажите стоимость аренды</string>
-    <string name="filters_screen_exit_description">Закрыть фильтры</string>
-    <string name="filters_select_brand_description">Выбрать марку</string>
-    <string name="filters_select_body_type_description">Выбрать тип кузова</string>
-
-
-    <string name="loading_error_title">Ошибка</string>
-    <string name="loading_error_text">Произошла ошибка при загрузке данных</string>
-    <string name="loading_error_button_text">Повторить</string>
-
-
-
 </resources>

@@ -1,5 +1,3 @@
-import java.util.Properties
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -7,22 +5,6 @@ plugins {
     id("kotlin-kapt")
     id("kotlinx-serialization")
     id("com.google.dagger.hilt.android")
-}
-
-fun getLeasingBaseUrl(): String {
-    val properties = Properties()
-    val stream = project.file("api.properties").inputStream()
-    properties.load(stream)
-    stream.close()
-    return properties.getProperty("LEASING_API_BASE_URL", "")
-}
-
-fun getLeasingImagesBaseUrl(): String {
-    val properties = Properties()
-    val stream = project.file("api.properties").inputStream()
-    properties.load(stream)
-    stream.close()
-    return properties.getProperty("LEASING_IMAGES_BASE_URL", "")
 }
 
 android {
@@ -38,11 +20,6 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        val leasingBaseUrl = getLeasingBaseUrl()
-        val leasingImagesBaseUrl = getLeasingImagesBaseUrl()
-
-        buildConfigField("String", "LEASING_API_BASE_URL", "\"${leasingBaseUrl}\"")
-        buildConfigField("String", "LEASING_IMAGES_BASE_URL", "\"${leasingImagesBaseUrl}\"")
     }
 
     buildTypes {
@@ -67,6 +44,18 @@ android {
 }
 
 dependencies {
+    implementation(project(":component:theme"))
+    implementation(project(":component:ui"))
+    implementation(project(":util:date"))
+    implementation(project(":feature:account"))
+    implementation(project(":feature:accountedit"))
+    implementation(project(":feature:auth"))
+    implementation(project(":feature:carlooking"))
+    implementation(project(":feature:leasing"))
+    implementation(project(":shared:account"))
+    implementation(project(":shared:car"))
+    implementation(project(":shared:api"))
+    implementation(project(":shared:rent"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

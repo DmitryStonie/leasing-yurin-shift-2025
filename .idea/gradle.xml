@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="CHOOSE_PER_TEST" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="#GRADLE_LOCAL_JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/component" />
+            <option value="$PROJECT_DIR$/component/theme" />
+            <option value="$PROJECT_DIR$/component/ui" />
+            <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature/account" />
+            <option value="$PROJECT_DIR$/feature/accountedit" />
+            <option value="$PROJECT_DIR$/feature/auth" />
+            <option value="$PROJECT_DIR$/feature/carlooking" />
+            <option value="$PROJECT_DIR$/feature/leasing" />
+            <option value="$PROJECT_DIR$/shared" />
+            <option value="$PROJECT_DIR$/shared/account" />
+            <option value="$PROJECT_DIR$/shared/api" />
+            <option value="$PROJECT_DIR$/shared/car" />
+            <option value="$PROJECT_DIR$/shared/rent" />
+            <option value="$PROJECT_DIR$/util" />
+            <option value="$PROJECT_DIR$/util/date" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

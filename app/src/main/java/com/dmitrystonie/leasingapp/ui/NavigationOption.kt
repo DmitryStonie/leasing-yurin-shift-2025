@@ -1,7 +1,7 @@
 package com.dmitrystonie.leasingapp.ui
 
 import com.dmitrystonie.leasingapp.account.ui.AccountRoute
-import com.dmitrystonie.leasingapp.carlooking.ui.carlist.CarsRoute
+import com.dmitrystonie.leasingapp.carlooking.feature.carlist.ui.CarsRoute
 import com.dmitrystonie.leasingapp.leasing.ui.orders.LeasingOrdersRoute
 import kotlin.reflect.KClass
 
