@@ -1,4 +1,4 @@
-package com.dmitrystonie.leasingapp.carlooking.ui.filters
+package com.dmitrystonie.leasingapp.carlooking.feature.ui
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background

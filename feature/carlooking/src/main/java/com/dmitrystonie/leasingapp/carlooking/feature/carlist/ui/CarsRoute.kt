@@ -1,4 +1,4 @@
-package com.dmitrystonie.leasingapp.carlooking.ui.carlist
+package com.dmitrystonie.leasingapp.carlooking.feature.carlist.ui
 
 import kotlinx.serialization.Serializable
 

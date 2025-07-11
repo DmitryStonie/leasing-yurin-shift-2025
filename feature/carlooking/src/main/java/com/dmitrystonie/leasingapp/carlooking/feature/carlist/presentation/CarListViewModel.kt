@@ -1,4 +1,4 @@
-package com.dmitrystonie.leasingapp.carlooking.presentation.carlist
+package com.dmitrystonie.leasingapp.carlooking.feature.carlist.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

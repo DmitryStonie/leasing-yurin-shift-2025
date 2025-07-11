@@ -21,11 +21,11 @@ import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
 import com.dmitrystonie.leasingapp.account.ui.AccountRoute
 import com.dmitrystonie.leasingapp.account.ui.AccountScreen
-import com.dmitrystonie.leasingapp.carlooking.ui.car.CarCardRoute
-import com.dmitrystonie.leasingapp.carlooking.ui.filters.CarFiltersRoute
-import com.dmitrystonie.leasingapp.carlooking.ui.car.CarScreen
-import com.dmitrystonie.leasingapp.carlooking.ui.carlist.CarsListScreen
-import com.dmitrystonie.leasingapp.carlooking.ui.carlist.CarsRoute
+import com.dmitrystonie.leasingapp.carlooking.feature.car.ui.CarCardRoute
+import com.dmitrystonie.leasingapp.carlooking.feature.car.ui.CarScreen
+import com.dmitrystonie.leasingapp.carlooking.feature.carlist.ui.CarsListScreen
+import com.dmitrystonie.leasingapp.carlooking.feature.carlist.ui.CarsRoute
+import com.dmitrystonie.leasingapp.carlooking.feature.ui.CarFiltersRoute
 import com.dmitrystonie.leasingapp.component.theme.BgPrimary
 import com.dmitrystonie.leasingapp.leasing.ui.booking.LeasingBookingRoute
 import com.dmitrystonie.leasingapp.leasing.ui.booking.LeasingBookingScreen

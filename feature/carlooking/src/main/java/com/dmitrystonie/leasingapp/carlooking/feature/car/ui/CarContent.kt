@@ -1,4 +1,4 @@
-package com.dmitrystonie.leasingapp.carlooking.ui.car
+package com.dmitrystonie.leasingapp.carlooking.feature.car.ui
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -10,9 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.dmitrystonie.leasingapp.car.domain.Rent
 import com.dmitrystonie.leasingapp.component.ui.BigTitle
-import com.dmitrystonie.leasingapp.carlooking.ui.CarImage
 import com.dmitrystonie.leasingapp.component.ui.CarsTopAppBarWithLeftIcon
 import com.dmitrystonie.leasingapp.component.ui.ColouredButton
 import com.dmitrystonie.leasingapp.component.ui.Specs

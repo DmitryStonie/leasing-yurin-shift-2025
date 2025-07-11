@@ -1,4 +1,4 @@
-package com.dmitrystonie.leasingapp.carlooking.ui.filters
+package com.dmitrystonie.leasingapp.carlooking.feature.ui
 
 import kotlinx.serialization.Serializable
 

@@ -1,4 +1,4 @@
-package com.dmitrystonie.leasingapp.carlooking.ui.carlist
+package com.dmitrystonie.leasingapp.carlooking.feature.carlist.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -11,9 +11,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.dmitrystonie.leasingapp.carlooking.presentation.carlist.CarListScreenState
-import com.dmitrystonie.leasingapp.carlooking.presentation.carlist.CarListViewModel
-import com.dmitrystonie.leasingapp.carlooking.ui.car.CarError
+import com.dmitrystonie.leasingapp.carlooking.feature.car.ui.CarError
+import com.dmitrystonie.leasingapp.carlooking.feature.carlist.presentation.CarListScreenState
+import com.dmitrystonie.leasingapp.carlooking.feature.carlist.presentation.CarListViewModel
 import com.dmitrystonie.leasingapp.component.ui.ProgressIndicator
 import com.dmitrystonie.leasingapp.component.theme.BgPrimary
 

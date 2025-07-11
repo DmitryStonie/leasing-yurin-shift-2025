@@ -1,4 +1,4 @@
-package com.dmitrystonie.leasingapp.carlooking.presentation.car
+package com.dmitrystonie.leasingapp.carlooking.feature.car.presentation
 
 import com.dmitrystonie.leasingapp.domain.entity.car.Car
 

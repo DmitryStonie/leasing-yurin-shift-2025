@@ -1,4 +1,4 @@
-package com.dmitrystonie.leasingapp.carlooking.ui.car
+package com.dmitrystonie.leasingapp.carlooking.feature.car.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -12,8 +12,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.dmitrystonie.leasingapp.car.domain.Rent
-import com.dmitrystonie.leasingapp.carlooking.presentation.car.CarScreenState
-import com.dmitrystonie.leasingapp.carlooking.presentation.car.CarViewModel
+import com.dmitrystonie.leasingapp.carlooking.feature.car.presentation.CarScreenState
+import com.dmitrystonie.leasingapp.carlooking.feature.car.presentation.CarViewModel
 import com.dmitrystonie.leasingapp.component.ui.ProgressIndicator
 import com.dmitrystonie.leasingapp.domain.entity.car.BodyType
 import com.dmitrystonie.leasingapp.domain.entity.car.Brand
