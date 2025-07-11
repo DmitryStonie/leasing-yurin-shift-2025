@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -83,11 +84,9 @@ fun LeasingContactsScreen(
             AgreementCheckbox(
                 onClick = {}, modifier = modifier.padding(top = 16.dp)
             )
-            Spacer(
-                modifier = Modifier.weight(1f)
-            )
             NextButton(
-                onClick = onNextClick
+                onClick = onNextClick,
+                modifier = modifier.padding(top = 16.dp).fillMaxWidth()
             )
 
         }

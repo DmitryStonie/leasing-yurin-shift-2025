@@ -55,10 +55,11 @@ fun LeasingBookingScreen(
 
         ReturnField(modifier = modifier.padding(top = 16.dp))
 
+        Spacer(modifier = Modifier.weight(1f))
+
         NextButton(
             onClick = onNextClick, modifier = modifier
-                .padding(bottom = 24.dp)
-                .weight(1f)
+                .padding(bottom = 24.dp).fillMaxWidth()
         )
 
     }
