@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rent_price_title">Стоимость</string>
+    <string name="rent_price_dates_title">Aренда: %s - %s %s %s (%s дней)</string>
+</resources>

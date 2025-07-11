@@ -10,14 +10,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.dmitrystonie.leasingapp.R
 import com.dmitrystonie.leasingapp.car.domain.Rent
 import com.dmitrystonie.leasingapp.component.ui.CardItemDto
 import com.dmitrystonie.leasingapp.component.ui.CarsTopAppBarWithLeftIcon
 import com.dmitrystonie.leasingapp.component.ui.ColouredButton
 import com.dmitrystonie.leasingapp.component.ui.ColouredCard
 import com.dmitrystonie.leasingapp.component.ui.LineProgressIndicator
-import com.dmitrystonie.leasingapp.component.ui.RentPrice
 import com.dmitrystonie.leasingapp.leasing.presentation.BookingViewModel
 import com.dmitrystonie.leasingapp.leasing.presentation.dto.BookingData
 import com.dmitrystonie.leasingapp.leasing.presentation.dto.ContactsData
@@ -25,6 +23,8 @@ import com.dmitrystonie.leasingapp.component.theme.BgBrand
 import com.dmitrystonie.leasingapp.component.theme.BgPrimary
 import com.dmitrystonie.leasingapp.component.theme.BorderLight
 import com.dmitrystonie.leasingapp.component.theme.TextInvert
+import com.dmitrystonie.leasingapp.feature.leasing.R
+import com.dmitrystonie.leasingapp.rent.ui.RentPrice
 import com.dmitrystonie.leasingapp.util.dateToDay
 import com.dmitrystonie.leasingapp.util.daysDuration
 import com.dmitrystonie.leasingapp.component.ui.R as RComponent
@@ -37,10 +37,9 @@ fun LeasingConfirmationScreen(
     onChangeBookingData: () -> Unit,
     onChangeContactsData: () -> Unit
 ) {
-    val viewModel: BookingViewModel =
-        hiltViewModel<BookingViewModel, BookingViewModel.BookingViewModelFactory> { factory ->
-            factory.create(carId)
-        }
+    hiltViewModel<BookingViewModel, BookingViewModel.BookingViewModelFactory> { factory ->
+        factory.create(carId)
+    }
 
     val modifier = Modifier.padding(start = 16.dp, end = 16.dp)
 
@@ -106,11 +105,11 @@ fun ConfirmButton(modifier: Modifier = Modifier, onClick: () -> Unit) {
 
 @Composable
 fun PriceField(modifier: Modifier = Modifier, carPrice: Int, rent: Rent) {
+    val FOURTEEN_DAYS = 14 * 1000 * 60 * 60 * 24
     RentPrice(
-        modifier = modifier, price = carPrice * daysDuration(rent.startDate, rent.endDate) , rent = Rent(
-            startDate = System.currentTimeMillis(),
-            endDate = System.currentTimeMillis() + 14 * 1000 * 60 * 60 * 24
-        )
+        modifier = modifier, price = carPrice * daysDuration(rent.startDate, rent.endDate),
+        startDate = System.currentTimeMillis(),
+        endDate = System.currentTimeMillis() + FOURTEEN_DAYS,
     )
 }
 

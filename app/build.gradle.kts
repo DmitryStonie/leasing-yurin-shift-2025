@@ -55,6 +55,7 @@ dependencies {
     implementation(project(":shared:account"))
     implementation(project(":shared:car"))
     implementation(project(":shared:api"))
+    implementation(project(":shared:rent"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

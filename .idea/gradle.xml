@@ -24,6 +24,7 @@
             <option value="$PROJECT_DIR$/shared/account" />
             <option value="$PROJECT_DIR$/shared/api" />
             <option value="$PROJECT_DIR$/shared/car" />
+            <option value="$PROJECT_DIR$/shared/rent" />
             <option value="$PROJECT_DIR$/util" />
             <option value="$PROJECT_DIR$/util/date" />
           </set>

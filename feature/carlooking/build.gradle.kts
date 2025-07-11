@@ -29,6 +29,7 @@ android {
 dependencies {
     implementation(project(":shared:api"))
     implementation(project(":shared:car"))
+    implementation(project(":shared:rent"))
     implementation(project(":component:theme"))
     implementation(project(":component:ui"))
     implementation(project(":util:date"))

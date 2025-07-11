@@ -15,7 +15,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.dmitrystonie.leasingapp.R
 import com.dmitrystonie.leasingapp.component.ui.CarsTopAppBarWithLeftIcon
 import com.dmitrystonie.leasingapp.component.ui.ColouredButton
 import com.dmitrystonie.leasingapp.component.ui.InputTextFieldWithTitle
@@ -26,16 +25,16 @@ import com.dmitrystonie.leasingapp.component.theme.BgBrand
 import com.dmitrystonie.leasingapp.component.theme.BgPrimary
 import com.dmitrystonie.leasingapp.component.theme.BorderLight
 import com.dmitrystonie.leasingapp.component.theme.TextInvert
+import com.dmitrystonie.leasingapp.feature.leasing.R
 import com.dmitrystonie.leasingapp.component.ui.R as RComponent
 
 @Composable
 fun LeasingContactsScreen(
     carId: String, onBackClick: () -> Unit, onNextClick: () -> Unit
 ) {
-    val viewModel: BookingViewModel =
-        hiltViewModel<BookingViewModel, BookingViewModel.BookingViewModelFactory> { factory ->
-            factory.create(carId)
-        }
+    hiltViewModel<BookingViewModel, BookingViewModel.BookingViewModelFactory> { factory ->
+        factory.create(carId)
+    }
 
     val modifier = Modifier.padding(start = 16.dp, end = 16.dp)
     Column {

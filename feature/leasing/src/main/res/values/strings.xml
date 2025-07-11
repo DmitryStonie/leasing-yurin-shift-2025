@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="leasing_screen_step_1_title">Бронирование авто</string>
+    <string name="leasing_screen_step_2_title">Ваши данные</string>
+    <string name="leasing_screen_step_3_title">Проверка данных</string>
+    <string name="leasing_step_text">Шаг %d из %d</string>
+    <string name="leasing_date_headline">Даты аренды</string>
+    <string name="leasing_date_placeholder">Дата аренды</string>
+    <string name="leasing_place_of_receipt_headline">Место получения</string>
+    <string name="leasing_place_of_receipt_placeholder">Место получения</string>
+    <string name="leasing_place_of_return_headline">Место возврата</string>
+    <string name="leasing_place_of_return_placeholder">Место возврата</string>
+    <string name="leasing_continue_button_text">Продолжить</string>
+    <string name="leasing_lastname_headline">Фамилия</string>
+    <string name="leasing_lastname_placeholder">Фамилия</string>
+    <string name="leasing_firstname_headline">Имя</string>
+    <string name="leasing_firstname_placeholder">Имя</string>
+    <string name="leasing_middlename_headline">Отчество</string>
+    <string name="leasing_middlename_placeholder">Отчество</string>
+    <string name="leasing_birthdate_headline">Дата рождения</string>
+    <string name="leasing_birthdate_placeholder">__.__.____</string>
+    <string name="leasing_phone_number_headline">Номер телефона</string>
+    <string name="leasing_phone_number_placeholder">Номер телефона</string>
+    <string name="leasing_email_headline">"Электронная почта</string>
+    <string name="leasing_email_placeholder">Электронная почта</string>
+    <string name="leasing_comment_headline">Комментарий</string>
+    <string name="leasing_comment_placeholder">Введите дополнительную информацию</string>
+    <string name="leasing_agreement_accept_text">Принимаю условия соглашения</string>
+    <string name="leasing_leasing_info_text">Данные брони</string>
+    <string name="leasing_leasing_contacts_text">Данные заказчика</string>
+    <string name="leasing_car_headline">Автомобиль</string>
+    <string name="leasing_leasing_dates_headline">Даты брони</string>
+    <string name="leasing_leasing_dates_template">%s - %s</string>
+    <string name="leasing_full_name_headline">ФИО</string>
+    <string name="leasing_date_interval">Аренда: $1%d - $2%d $3%s ($4%d дней)</string>
+    <string name="leasing_draw_up_button_text">Оформить</string>
+    <string name="leasing_success_message_text">Автомобиль забронирован</string>
+    <string name="leasing_status_headline">Статус</string>
+    <string name="leasing_sms_info_text">Вся информация была продублирована в SMS</string>
+    <string name="leasing_check_status_button_text">Посмотреть статус</string>
+    <string name="leasing_to_main_page_button_text">На главную</string>
+    <string name="leasing_back_description">Назад</string>
+    <string name="leasing_name_template">%s %s %s</string>
+
+</resources>

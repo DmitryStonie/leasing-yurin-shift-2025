@@ -15,7 +15,6 @@ import com.dmitrystonie.leasingapp.component.ui.BigTitle
 import com.dmitrystonie.leasingapp.carlooking.ui.CarImage
 import com.dmitrystonie.leasingapp.component.ui.CarsTopAppBarWithLeftIcon
 import com.dmitrystonie.leasingapp.component.ui.ColouredButton
-import com.dmitrystonie.leasingapp.component.ui.RentPrice
 import com.dmitrystonie.leasingapp.component.ui.Specs
 import com.dmitrystonie.leasingapp.domain.entity.car.Car
 import com.dmitrystonie.leasingapp.component.theme.BgBrand
@@ -25,6 +24,7 @@ import com.dmitrystonie.leasingapp.component.theme.IndicatorLight
 import com.dmitrystonie.leasingapp.component.theme.TextInvert
 import com.dmitrystonie.leasingapp.component.theme.TextSecondary
 import com.dmitrystonie.leasingapp.feature.carlooking.R
+import com.dmitrystonie.leasingapp.rent.ui.RentPrice
 import com.dmitrystonie.leasingapp.component.ui.R as RComponent
 
 @Composable
@@ -95,10 +95,10 @@ internal fun Price(
     val MILLISECONDS_IN_DAY = 86400000
     val FOURTEEN_DAYS_STUB = 14 * MILLISECONDS_IN_DAY
     RentPrice(
-        modifier = modifier, price = car.price, rent = Rent(
-            startDate = System.currentTimeMillis(),
-            endDate = System.currentTimeMillis() + FOURTEEN_DAYS_STUB
-        )
+        modifier = modifier,
+        price = car.price,
+        startDate = System.currentTimeMillis(),
+        endDate = System.currentTimeMillis() + FOURTEEN_DAYS_STUB
     )
 }
 

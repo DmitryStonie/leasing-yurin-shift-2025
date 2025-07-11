@@ -1,6 +1,6 @@
 package com.dmitrystonie.leasingapp.leasing.data.datasource
 
-import com.dmitrystonie.leasingapp.carlooking.data.datasource.dto.CarPaginatedResponse
+import com.dmitrystonie.leasingapp.leasing.data.datasource.dto.CarPaginatedResponse
 import com.dmitrystonie.leasingapp.leasing.data.datasource.dto.RentDto
 import com.dmitrystonie.leasingapp.leasing.data.datasource.dto.RentRequest
 import com.dmitrystonie.leasingapp.leasing.data.datasource.dto.RentResponse
