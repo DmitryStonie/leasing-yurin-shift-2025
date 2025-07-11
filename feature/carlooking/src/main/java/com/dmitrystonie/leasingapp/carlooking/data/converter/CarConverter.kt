@@ -13,7 +13,7 @@ import com.dmitrystonie.leasingapp.domain.entity.car.Transmission
 import com.dmitrystonie.leasingapp.shared.api.BuildConfig
 
 fun CarDto.toCar(): Car? {
-    try{
+    try {
         return Car(
             id = this.id,
             name = this.name,
@@ -27,19 +27,18 @@ fun CarDto.toCar(): Car? {
             steering = convertSteering(),
             rents = convertRents(),
         )
-    } catch (e: Exception){
+    } catch (e: Exception) {
         Log.d("ERROR", "Got exception ${e.message}")
         return null
     }
 }
 
-private fun CarDto.convertRents(): List<Rent> {
-    return if (this.rents != null) this.rents.map { rent ->
-        Rent(
-            rent.startDate, rent.endDate
-        )
-    } else listOf()
-}
+private fun CarDto.convertRents(): List<Rent> = this.rents?.map { rent ->
+    Rent(
+        rent.startDate, rent.endDate
+    )
+} ?: listOf()
+
 
 private fun CarDto.convertSteering(): Steering {
     return when (this.steering) {
@@ -81,13 +80,12 @@ private fun CarDto.convertTransmission(): Transmission {
     }
 }
 
-private fun CarDto.convertMedia(): List<Media> {
-    return this.media.map { mediaDto ->
-        Media(
-            url = "${BuildConfig.LEASING_IMAGES_BASE_URL}${mediaDto.url}", isCover = mediaDto.isCover
-        )
-    }
+private fun CarDto.convertMedia(): List<Media> = this.media.map { mediaDto ->
+    Media(
+        url = "${BuildConfig.LEASING_IMAGES_BASE_URL}${mediaDto.url}", isCover = mediaDto.isCover
+    )
 }
+
 
 private fun CarDto.convertBrand(): Brand {
     return when (this.brand) {

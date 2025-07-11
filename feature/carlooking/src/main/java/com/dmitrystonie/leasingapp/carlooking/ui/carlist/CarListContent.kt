@@ -33,17 +33,19 @@ internal fun TopBar() {
 
 @Composable
 internal fun CarsList(cars: List<Car>, onClick: (String) -> Unit) {
-        LazyColumn(
-            modifier = Modifier.fillMaxWidth().height(1200.dp), userScrollEnabled = true,
-            contentPadding = PaddingValues(bottom = 24.dp),
-        ) {
-            items(cars) { item ->
-                CarSmallCard(
-                    modifier = Modifier.padding(top = 24.dp),
-                    car = item,
-                    onClick = onClick)
-            }
+    LazyColumn(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(1200.dp),
+        userScrollEnabled = true,
+        contentPadding = PaddingValues(bottom = 24.dp),
+    ) {
+        items(cars) { item ->
+            CarSmallCard(
+                modifier = Modifier.padding(top = 24.dp), car = item, onClick = onClick
+            )
         }
+    }
 }
 
 @Composable
